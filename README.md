@@ -9,6 +9,5 @@ Saca fotos a los peces que veas, con un registro de los que ya sacaste fotos.
 Sistema de diálogo añadido. Con sonidos y portraits personalizados para cada personaje.
 Uso de NavMesh 2D para las IAs de los peces.
 Sistema de viaje rapido con zonas nuevas de viaje rápido descubribles.
-
+Una bonita interfaz pixel art.
 Más de 30 peces a descubrir!
-
