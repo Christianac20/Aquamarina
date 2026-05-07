@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class ItemSlot : MonoBehaviour
+public class ItemSlot : MonoBehaviour, IPointerClickHandler
 {
     #region VARIABLES
     //ITEM DATA
@@ -17,19 +18,15 @@ public class ItemSlot : MonoBehaviour
     [SerializeField] TMP_Text quantityText;
     [SerializeField] Image itemImage;
 
+    public GameObject selectedShader;
+    public bool thisItemSelected;
+    [SerializeField] InventoryManager inventoryManager;
     #endregion
 
     #region METHODS
-    // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        inventoryManager = FindAnyObjectByType<InventoryManager>();
     }
 
     public void AddItem(string itemName, int quantity, Sprite itemSprite)
@@ -42,6 +39,31 @@ public class ItemSlot : MonoBehaviour
         quantityText.text = quantity.ToString();
         quantityText.enabled = true;
         itemImage.sprite = itemSprite;
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData.button == PointerEventData.InputButton.Left)
+        {
+            OnLeftClick();
+        }
+        if (eventData.button == PointerEventData.InputButton.Right)
+        {
+            OnRightClick();
+        }
+    }
+
+    public void OnLeftClick()
+    { 
+        inventoryManager.DeselectAllSlots();
+        
+        selectedShader.SetActive(true);
+        thisItemSelected = true;
+    }
+
+    public void OnRightClick()
+    { 
+    
     }
     #endregion
 }

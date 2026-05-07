@@ -8,7 +8,7 @@ public class InventoryManager : MonoBehaviour
     #region VARIABLES
     public GameObject inventoryMenu;
     bool menuActivated;
-    public ItemSlot[] itemSlot;
+    public ItemSlot[] itemSlots;
 
     [Header("Variables Input System")]
     [SerializeField] InputActionAsset inputActionAsset;
@@ -48,13 +48,22 @@ public class InventoryManager : MonoBehaviour
     public void AddItem(string itemName, int quantity, Sprite itemSprite)
     {
         //Debug.Log("itemName = " + itemName + ", quantity = " + quantity + ", itemSprite = " + itemSprite);
-        for (int i = 0; i < itemSlot.Length; i++)
+        for (int i = 0; i < itemSlots.Length; i++)
         {
-            if (itemSlot[i].isFull == false)
+            if (itemSlots[i].isFull == false)
             { 
-                itemSlot[i].AddItem(itemName, quantity, itemSprite);
+                itemSlots[i].AddItem(itemName, quantity, itemSprite);
                 return;
             }
+        }
+    }
+
+    public void DeselectAllSlots()
+    {
+        for (int i = 0; i < itemSlots.Length; i++)
+        {
+            itemSlots[i].selectedShader.SetActive(false);
+            itemSlots[i].thisItemSelected = false;
         }
     }
 }
