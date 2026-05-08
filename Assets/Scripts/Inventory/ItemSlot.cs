@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System;
 
 public class ItemSlot : MonoBehaviour, IPointerClickHandler
 {
@@ -13,6 +14,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public int quantity;
     [SerializeField] int maxNumberOfItems;
     [SerializeField] Sprite itemSprite;
+    [SerializeField] Sprite emptySprite;
     public bool isFull;
 
     //ITEM SLOT
@@ -82,13 +84,31 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     {
         if (thisItemSelected)
         {
-            inventoryManager.UseItem(itemName);
+            bool usable = inventoryManager.UseItem(itemName);
+            if (usable)
+            {
+                this.quantity -= 1;
+                quantityText.text = this.quantity.ToString();
+                if (this.quantity <= 0)
+                {
+                    EmptySlot();
+                }
+            }
         }
-
-        inventoryManager.DeselectAllSlots();
+        else
+        {
+            inventoryManager.DeselectAllSlots();
         
-        selectedShader.SetActive(true);
-        thisItemSelected = true;
+            selectedShader.SetActive(true);
+            thisItemSelected = true;
+        }
+    }
+
+    private void EmptySlot()
+    {
+        quantityText.enabled = false;
+        itemImage.sprite = emptySprite;
+
     }
 
     public void OnRightClick()

@@ -28,13 +28,23 @@ public class ItemSO : ScriptableObject
 
     }
 
-    public void UseItem()
+    public bool UseItem()
     {
         if(statToChange == StatToChange.health)
         {
-            GameObject.Find("Player").GetComponent<Timer>().AddTime(ammountTOChangeStat);
-            Debug.Log("Se añadieron " + ammountTOChangeStat + " puntos de vida");
+            Timer timer = GameObject.Find("Player").GetComponent<Timer>();
+            if (timer.currentTime == timer.totalTime)
+            {
+                return false;
+            }
+            else
+            {
+                timer.AddTime(ammountTOChangeStat);
+                return true;
+                Debug.Log("Se añadieron " + ammountTOChangeStat + " puntos de vida");
+            }
         }
+        return false;
     }
 
     public enum StatToChange
