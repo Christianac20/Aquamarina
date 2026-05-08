@@ -14,7 +14,8 @@ public class AtackCorrutine : MonoBehaviour
     public Transform tarject; //tarject es el Player
     public Rigidbody2D tarjectRigidbody;
     public bool agresive = false;
-    public Vector2 distanceDifference;
+    public Vector2 distanceDirecction;
+    private float distanceDifference;
     public float agresiveVelocity; //Velocidad en la que se mueve cuendo se asusta
     public float detectVelocity; //Velocidad límite para detectar al Player
     public PlayerControllerWater playerScript;
@@ -42,7 +43,6 @@ public class AtackCorrutine : MonoBehaviour
         agent.updateUpAxis = false;
         agent.SetDestination(points[currentPosition].position);
         #endregion
-        StartCoroutine(AtackRutine());
     }
 
     void Update()
@@ -52,6 +52,7 @@ public class AtackCorrutine : MonoBehaviour
         animator.SetBool("Scared", agresive);
 
         #endregion
+        StartCoroutine(AtackRutine());
     }
 
     IEnumerator AtackRutine()
@@ -72,15 +73,23 @@ public class AtackCorrutine : MonoBehaviour
 
             else
             {
-                agent.isStopped = false;
+                agent.isStopped = true;
 
                 //Jesus, danos un 10 porfaporfi. No se lo digo a Dani porque me manda a la mierda.
-                Vector2 distanceDifference = (transform.position - tarject.position).normalized;
+
+                distanceDifference = Vector2.Distance(transform.position, tarjectPosition);
+
+                Vector2 distanceDirecction = (transform.position - tarject.position).normalized;
                 Debug.Log("ÑomÑom");
 
-                transform.Translate(tarjectPosition * agresiveVelocity * Time.deltaTime);
+                transform.Translate(distanceDirecction * -1f * agresiveVelocity * Time.deltaTime);
+
+                if(distanceDifference < 0.1) //Deja de ser agresivo si 
+                {
+                    agresive = false;
+                }
             }
-        }
+        
     }
         
 
@@ -94,12 +103,12 @@ public class AtackCorrutine : MonoBehaviour
             if (detectVelocity < playerScript.speedMultiplier)
             {
                 Debug.Log("Collision");
-                agresive = true;
                 tarjectPosition = tarject.transform.position;
+                agresive = true;
             }
         }
     }
-    
+
 
     private void OnTriggerExit2D(Collider2D collision)
     {

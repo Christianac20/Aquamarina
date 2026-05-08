@@ -374,12 +374,12 @@ MonoBehaviour:
   tarject: {fileID: 1362743830}
   tarjectRigidbody: {fileID: 1362743827}
   agresive: 0
-  distanceDifference: {x: 0, y: 0}
-  agresiveVelocity: 1
-  detectVelocity: 1.5
+  distanceDirecction: {x: 0, y: 0}
+  agresiveVelocity: 3
+  detectVelocity: 1
   playerScript: {fileID: 1362743826}
   spriteRenderer: {fileID: 1362743839}
-  launchToPlayerPosition: {x: 0, y: 0}
+  tarjectPosition: {x: 0, y: 0}
 --- !u!195 &623464914
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -436,7 +436,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 3.02
+  m_Radius: 4
 --- !u!1 &800323822
 GameObject:
   m_ObjectHideFlags: 0
@@ -894,6 +894,14 @@ PrefabInstance:
       propertyPath: playerScript
       value: 
       objectReference: {fileID: 1362743826}
+    - target: {fileID: 399854991433194701, guid: 532222b1af9f1804cbd3777644564f31, type: 3}
+      propertyPath: detectVelocity
+      value: 0.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 399854991433194701, guid: 532222b1af9f1804cbd3777644564f31, type: 3}
+      propertyPath: scaredVelocity
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 399854991433194701, guid: 532222b1af9f1804cbd3777644564f31, type: 3}
       propertyPath: tarjectRigidbody
       value: 
