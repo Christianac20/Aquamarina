@@ -14,4 +14,4 @@ Más de 30 peces a descubrir!
 Con sistema de inventario e items con funciones únicas.
 Interfaz en una PDA con secciones toggleables como registro de peces e inventario. 
 Animaciones nuevas de idle para el player en tierra.
-Bleh.
+Registro de peces para la camara de fotos, con descripciones y peces desbloqueados solo si se les ha hecho una foto.
