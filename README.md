@@ -11,6 +11,5 @@ Uso de NavMesh 2D para las IAs de los peces.
 Sistema de viaje rapido con zonas nuevas de viaje rápido descubribles.
 Una bonita interfaz pixel art.
 Más de 30 peces a descubrir!
-
 Con sistema de inventario e items con funciones únicas.
-
+Interfaz en una PDA con secciones toggleabeles.
