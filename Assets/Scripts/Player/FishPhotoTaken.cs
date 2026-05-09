@@ -95,302 +95,273 @@ public class FishPhotoTaken : MonoBehaviour
                 break;
 
             case "PezCirujanoAzul":
-                pezCirujanoAzul = true;
-                if (!pezPayaso)
+                if (!pezCirujanoAzul)
                 {
-                    pezPayaso = true;
-                    buttonsPecesRegistro[0].enabled = true;
-                    imagesPecesRegistro[0].color = Color.white;
+                    pezCirujanoAzul = true;
+                    buttonsPecesRegistro[3].enabled = true;
+                    imagesPecesRegistro[3].color = Color.white;
                 }
                 break;
 
             case "Anchoa":
-                anchoa = true;
-                if (!pezPayaso)
+                if (!anchoa)
                 {
-                    pezPayaso = true;
-                    buttonsPecesRegistro[0].enabled = true;
-                    imagesPecesRegistro[0].color = Color.white;
+                    anchoa = true;
+                    buttonsPecesRegistro[4].enabled = true;
+                    imagesPecesRegistro[4].color = Color.white;
                 }
                 break;
 
             case "MedusaLuna":
-                medusaLuna = true;
-                if (!pezPayaso)
+                if (!medusaLuna)
                 {
-                    pezPayaso = true;
-                    buttonsPecesRegistro[0].enabled = true;
-                    imagesPecesRegistro[0].color = Color.white;
+                    medusaLuna = true;
+                    buttonsPecesRegistro[5].enabled = true;
+                    imagesPecesRegistro[5].color = Color.white;
                 }
                 break;
 
             case "Raya":
-                raya = true;
-                if (!pezPayaso)
+                if (!raya)
                 {
-                    pezPayaso = true;
-                    buttonsPecesRegistro[0].enabled = true;
-                    imagesPecesRegistro[0].color = Color.white;
+                    raya = true;
+                    buttonsPecesRegistro[6].enabled = true;
+                    imagesPecesRegistro[6].color = Color.white;
                 }
                 break;
 
             case "PezCometa":
-                pezCometa = true;
-                if (!pezPayaso)
+                if (!pezCometa)
                 {
-                    pezPayaso = true;
-                    buttonsPecesRegistro[0].enabled = true;
-                    imagesPecesRegistro[0].color = Color.white;
+                    pezCometa = true;
+                    buttonsPecesRegistro[7].enabled = true;
+                    imagesPecesRegistro[7].color = Color.white;
                 }
                 break;
 
             case "Atun":
-                atun = true;
-                if (!pezPayaso)
+                if (!atun)
                 {
-                    pezPayaso = true;
-                    buttonsPecesRegistro[0].enabled = true;
-                    imagesPecesRegistro[0].color = Color.white;
+                    atun = true;
+                    buttonsPecesRegistro[8].enabled = true;
+                    imagesPecesRegistro[8].color = Color.white;
                 }
                 break;
 
             case "Barracuda":
-                barracuda = true;
-                if (!pezPayaso)
+                if (!barracuda)
                 {
-                    pezPayaso = true;
-                    buttonsPecesRegistro[0].enabled = true;
-                    imagesPecesRegistro[0].color = Color.white;
+                    barracuda = true;
+                    buttonsPecesRegistro[9].enabled = true;
+                    imagesPecesRegistro[9].color = Color.white;
                 }
                 break;
 
             case "Delfin":
-                delfin = true;
-                if (!pezPayaso)
+                if (!delfin)
                 {
-                    pezPayaso = true;
-                    buttonsPecesRegistro[0].enabled = true;
-                    imagesPecesRegistro[0].color = Color.white;
+                    delfin = true;
+                    buttonsPecesRegistro[10].enabled = true;
+                    imagesPecesRegistro[10].color = Color.white;
                 }
                 break;
 
             case "TortugaBoba":
-                tortugaBoba = true;
-                if (!pezPayaso)
+                if (!tortugaBoba)
                 {
-                    pezPayaso = true;
-                    buttonsPecesRegistro[0].enabled = true;
-                    imagesPecesRegistro[0].color = Color.white;
+                    tortugaBoba = true;
+                    buttonsPecesRegistro[11].enabled = true;
+                    imagesPecesRegistro[11].color = Color.white;
                 }
                 break;
 
             case "TiburonBlanco":
                 tiburonBlanco = true;
-                if (!pezPayaso)
+                if (!tiburonBlanco)
                 {
-                    pezPayaso = true;
-                    buttonsPecesRegistro[0].enabled = true;
-                    imagesPecesRegistro[0].color = Color.white;
+                    tiburonBlanco = true;
+                    buttonsPecesRegistro[12].enabled = true;
+                    imagesPecesRegistro[12].color = Color.white;
                 }
                 break;
 
             case "PezLuna":
-                pezLuna = true;
-                if (!pezPayaso)
+                if (!pezLuna)
                 {
-                    pezPayaso = true;
-                    buttonsPecesRegistro[0].enabled = true;
-                    imagesPecesRegistro[0].color = Color.white;
+                    pezLuna = true;
+                    buttonsPecesRegistro[13].enabled = true;
+                    imagesPecesRegistro[13].color = Color.white;
                 }
                 break;
 
             case "Orca":
-                orca = true;
-                if (!pezPayaso)
+                if (!orca)
                 {
-                    pezPayaso = true;
-                    buttonsPecesRegistro[0].enabled = true;
-                    imagesPecesRegistro[0].color = Color.white;
+                    orca = true;
+                    buttonsPecesRegistro[14].enabled = true;
+                    imagesPecesRegistro[14].color = Color.white;
                 }
                 break;
 
             case "AngelMarino":
-                angelMarino = true;
-                if (!pezPayaso)
+                if (!angelMarino)
                 {
-                    pezPayaso = true;
-                    buttonsPecesRegistro[0].enabled = true;
-                    imagesPecesRegistro[0].color = Color.white;
+                    angelMarino = true;
+                    buttonsPecesRegistro[15].enabled = true;
+                    imagesPecesRegistro[15].color = Color.white;
                 }
                 break;
 
             case "PezHacha":
-                pezHacha = true;
-                if (!pezPayaso)
+                if (!pezHacha)
                 {
-                    pezPayaso = true;
-                    buttonsPecesRegistro[0].enabled = true;
-                    imagesPecesRegistro[0].color = Color.white;
+                    pezHacha = true;
+                    buttonsPecesRegistro[16].enabled = true;
+                    imagesPecesRegistro[16].color = Color.white;
                 }
                 break;
 
             case "PezFantasmaAzul":
-                pezFantasmaAzul = true;
-                if (!pezPayaso)
+                if (!pezFantasmaAzul)
                 {
-                    pezPayaso = true;
-                    buttonsPecesRegistro[0].enabled = true;
-                    imagesPecesRegistro[0].color = Color.white;
+                    pezFantasmaAzul = true;
+                    buttonsPecesRegistro[17].enabled = true;
+                    imagesPecesRegistro[17].color = Color.white;
                 }
                 break;
 
             case "PezFantasmaNaranja":
-                pezFantasmaNaranja = true;
-                if (!pezPayaso)
+                if (!pezFantasmaNaranja)
                 {
-                    pezPayaso = true;
-                    buttonsPecesRegistro[0].enabled = true;
-                    imagesPecesRegistro[0].color = Color.white;
+                    pezFantasmaNaranja = true;
+                    buttonsPecesRegistro[18].enabled = true;
+                    imagesPecesRegistro[18].color = Color.white;
                 }
                 break;
 
             case "PezFantasmaRojo":
-                pezFantasmaRojo = true;
-                if (!pezPayaso)
+                if (!pezFantasmaRojo)
                 {
-                    pezPayaso = true;
-                    buttonsPecesRegistro[0].enabled = true;
-                    imagesPecesRegistro[0].color = Color.white;
+                    pezFantasmaRojo = true;
+                    buttonsPecesRegistro[19].enabled = true;
+                    imagesPecesRegistro[19].color = Color.white;
                 }
                 break;
 
             case "PezFantasmaRosa":
-                pezFantasmaRosa = true;
-                if (!pezPayaso)
+                if (!pezFantasmaRosa)
                 {
-                    pezPayaso = true;
-                    buttonsPecesRegistro[0].enabled = true;
-                    imagesPecesRegistro[0].color = Color.white;
+                    pezFantasmaRosa = true;
+                    buttonsPecesRegistro[20].enabled = true;
+                    imagesPecesRegistro[20].color = Color.white;
                 }
                 break;
 
             case "Gamba":
-                gamba = true;
-                if (!pezPayaso)
+                if (!gamba)
                 {
-                    pezPayaso = true;
-                    buttonsPecesRegistro[0].enabled = true;
-                    imagesPecesRegistro[0].color = Color.white;
+                    gamba = true;
+                    buttonsPecesRegistro[21].enabled = true;
+                    imagesPecesRegistro[21].color = Color.white;
                 }
                 break;
 
             case "PezFoco":
-                pezFoco = true;
-                if (!pezPayaso)
+                if (!pezFoco)
                 {
-                    pezPayaso = true;
-                    buttonsPecesRegistro[0].enabled = true;
-                    imagesPecesRegistro[0].color = Color.white;
+                    pezFoco = true;
+                    buttonsPecesRegistro[22].enabled = true;
+                    imagesPecesRegistro[22].color = Color.white;
                 }
                 break;
 
             case "Pulpo":
-                pulpo = true;
-                if (!pezPayaso)
+                if (!pulpo)
                 {
-                    pezPayaso = true;
-                    buttonsPecesRegistro[0].enabled = true;
-                    imagesPecesRegistro[0].color = Color.white;
+                    pulpo = true;
+                    buttonsPecesRegistro[23].enabled = true;
+                    imagesPecesRegistro[23].color = Color.white;
                 }
                 break;
 
             case "Calamar":
-                calamar = true;
-                if (!pezPayaso)
+                if (!calamar)
                 {
-                    pezPayaso = true;
-                    buttonsPecesRegistro[0].enabled = true;
-                    imagesPecesRegistro[0].color = Color.white;
+                    calamar = true;
+                    buttonsPecesRegistro[24].enabled = true;
+                    imagesPecesRegistro[24].color = Color.white;
                 }
                 break;
 
             case "PezComecocos":
-                pezComecocos = true;
-                if (!pezPayaso)
+                if (!pezComecocos)
                 {
-                    pezPayaso = true;
-                    buttonsPecesRegistro[0].enabled = true;
-                    imagesPecesRegistro[0].color = Color.white;
+                    pezComecocos = true;
+                    buttonsPecesRegistro[25].enabled = true;
+                    imagesPecesRegistro[25].color = Color.white;
                 }
                 break;
 
             case "AnguilaPelicano":
-                anguilaPelicano = true;
-                if (!pezPayaso)
+                if (!anguilaPelicano)
                 {
-                    pezPayaso = true;
-                    buttonsPecesRegistro[0].enabled = true;
-                    imagesPecesRegistro[0].color = Color.white;
+                    anguilaPelicano = true;
+                    buttonsPecesRegistro[25].enabled = true;
+                    imagesPecesRegistro[25].color = Color.white;
                 }
                 break;
 
             case "PezBala":
-                pezBala = true;
-                if (!pezPayaso)
+                if (!pezBala)
                 {
-                    pezPayaso = true;
-                    buttonsPecesRegistro[0].enabled = true;
-                    imagesPecesRegistro[0].color = Color.white;
+                    pezBala = true;
+                    buttonsPecesRegistro[26].enabled = true;
+                    imagesPecesRegistro[26].color = Color.white;
                 }
                 break;
 
             case "PezLinterna":
-                pezLinterna = true;
-                if (!pezPayaso)
+                if (!pezLinterna)
                 {
-                    pezPayaso = true;
-                    buttonsPecesRegistro[0].enabled = true;
-                    imagesPecesRegistro[0].color = Color.white;
+                    pezLinterna = true;
+                    buttonsPecesRegistro[27].enabled = true;
+                    imagesPecesRegistro[27].color = Color.white;
                 }
                 break;
 
             case "PezGato":
-                pezGato = true;
-                if (!pezPayaso)
+                if (!pezGato)
                 {
-                    pezPayaso = true;
-                    buttonsPecesRegistro[0].enabled = true;
-                    imagesPecesRegistro[0].color = Color.white;
+                    pezGato = true;
+                    buttonsPecesRegistro[28].enabled = true;
+                    imagesPecesRegistro[28].color = Color.white;
                 }
                 break;
 
             case "PezGema":
-                pezGema = true;
-                if (!pezPayaso)
+                if (!pezGema)
                 {
-                    pezPayaso = true;
-                    buttonsPecesRegistro[0].enabled = true;
-                    imagesPecesRegistro[0].color = Color.white;
+                    pezGema = true;
+                    buttonsPecesRegistro[29].enabled = true;
+                    imagesPecesRegistro[29].color = Color.white;
                 }
                 break;
 
             case "Pezqueleto":
-                pezqueleto = true;
-                if (!pezPayaso)
+                if (!pezqueleto)
                 {
-                    pezPayaso = true;
-                    buttonsPecesRegistro[0].enabled = true;
-                    imagesPecesRegistro[0].color = Color.white;
+                    pezqueleto = true;
+                    buttonsPecesRegistro[30].enabled = true;
+                    imagesPecesRegistro[30].color = Color.white;
                 }
                 break;
 
             case "PezFosil":
-                pezFosil = true;
-                if (!pezPayaso)
+                if (!pezFosil)
                 {
-                    pezPayaso = true;
-                    buttonsPecesRegistro[0].enabled = true;
-                    imagesPecesRegistro[0].color = Color.white;
+                    pezFosil = true;
+                    buttonsPecesRegistro[31].enabled = true;
+                    imagesPecesRegistro[31].color = Color.white;
                 }
                 break;
         }
