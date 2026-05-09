@@ -12,9 +12,12 @@ public class PlayerController_Equipment : MonoBehaviour
     InputAction actionEquipo1Camera;
     InputAction actionEquipo2Net;
     InputAction actionEquipo3NetLauncher;
+    InputAction actionInventory;
 
     [Header("Variables generales")]
     [SerializeField] Vector2 moveAmmount;
+    [SerializeField] GameObject menuPDA;
+    bool menuPDAActivated;
 
     [Header("Variables del Animator")]
     public bool cameraEquipped;
@@ -42,12 +45,14 @@ public class PlayerController_Equipment : MonoBehaviour
         actionEquipo1Camera = InputSystem.actions.FindAction("Equipo1_Camera");
         actionEquipo2Net = InputSystem.actions.FindAction("Equipo2_Net");
         actionEquipo3NetLauncher = InputSystem.actions.FindAction("Equipo3_NetLauncher");
+        actionInventory = InputSystem.actions.FindAction("Inventory");
 
         //ASIGNO LAS VARIABLES DE COMPONENTES
         animator = GetComponent<Animator>();
         followMouse = GetComponentInChildren<FollowMouse>();
         playerControllerWater = GetComponentInChildren<PlayerControllerWater>();
         cameraEquipment = GameObject.FindWithTag("CameraPhotos");
+        menuPDA = GameObject.FindWithTag("PDAMenu");
         cameraEquipmentBasePosition = GameObject.FindWithTag("CameraPhotosBasePoint");
     }
 
@@ -55,6 +60,7 @@ public class PlayerController_Equipment : MonoBehaviour
     void Update()
     {
         //EQUIPMENT FUNCTIONS
+        OpenClosePDA();
         CameraEquip();
         TakePhoto();
         NetEquip();
@@ -138,6 +144,27 @@ public class PlayerController_Equipment : MonoBehaviour
             netLauncherEquipped = false;
             //followMouse.enabled = false;
             //cameraEquipment.transform.position = cameraEquipmentBasePosition.transform.position;
+        }
+    }
+
+    void OpenClosePDA()
+    {
+        if (!menuPDAActivated)
+        {
+            menuPDA.SetActive(false);
+        }
+
+        if (actionInventory.WasPressedThisFrame() && menuPDAActivated)
+        {
+            Time.timeScale = 1;
+            menuPDA.SetActive(false);
+            menuPDAActivated = false;
+        }
+        else if (actionInventory.WasPressedThisFrame() && !menuPDAActivated)
+        {
+            Time.timeScale = 0;
+            menuPDA.SetActive(true);
+            menuPDAActivated = true;
         }
     }
     #endregion

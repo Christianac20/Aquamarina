@@ -47,6 +47,7 @@ TagManager:
   - SubmarinePositions
   - SubmarineZone1
   - SubmarineZone2
+  - PDAMenu
   layers:
   - Default
   - TransparentFX

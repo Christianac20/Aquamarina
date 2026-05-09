@@ -432,6 +432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputActionAsset: {fileID: -944628639613478452, guid: 7723ea3da9515134597121e15c516c54, type: 3}
   moveAmmount: {x: 0, y: 0}
+  menuPDA: {fileID: 0}
   cameraEquipped: 0
   cameraTakePhoto: 0
   netEquipped: 0
@@ -480,8 +481,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 0}
-  totalTime: 120
-  timeDecreaseSpeed: 1
+  totalTime: 1200
+  timeDecreaseSpeed: 0
   currentTime: 0
   addAir: 20
   depleteAir: 10
@@ -492,7 +493,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1454644744081574198}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 82427c9977816554198206ea1afa667d, type: 3}
   m_Name: 
