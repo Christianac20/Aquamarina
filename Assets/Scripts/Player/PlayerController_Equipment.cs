@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController_Equipment : MonoBehaviour
 {
@@ -16,8 +17,8 @@ public class PlayerController_Equipment : MonoBehaviour
 
     [Header("Variables generales")]
     [SerializeField] Vector2 moveAmmount;
-    [SerializeField] GameObject menuPDA;
-    bool menuPDAActivated;
+    public GameObject menuPDA;
+    public bool menuPDAActivated;
 
     [Header("Variables del Animator")]
     public bool cameraEquipped;
@@ -149,6 +150,8 @@ public class PlayerController_Equipment : MonoBehaviour
 
     void OpenClosePDA()
     {
+        menuPDA.SetActive(true);
+
         if (!menuPDAActivated)
         {
             menuPDA.SetActive(false);

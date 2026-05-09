@@ -227,7 +227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   quantity: 0
-  maxNumberOfItems: 15
+  maxNumberOfItems: 30
   itemSprite: {fileID: 0}
   emptySprite: {fileID: 21300000, guid: d3a25a56abec3a04da623a6a8c5b5f1b, type: 3}
   isFull: 0
@@ -751,7 +751,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   quantity: 0
-  maxNumberOfItems: 15
+  maxNumberOfItems: 30
   itemSprite: {fileID: 0}
   emptySprite: {fileID: 21300000, guid: d3a25a56abec3a04da623a6a8c5b5f1b, type: 3}
   isFull: 0
@@ -1062,7 +1062,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   quantity: 0
-  maxNumberOfItems: 15
+  maxNumberOfItems: 30
   itemSprite: {fileID: 0}
   emptySprite: {fileID: 21300000, guid: d3a25a56abec3a04da623a6a8c5b5f1b, type: 3}
   isFull: 0
@@ -1164,7 +1164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   quantity: 0
-  maxNumberOfItems: 15
+  maxNumberOfItems: 30
   itemSprite: {fileID: 0}
   emptySprite: {fileID: 21300000, guid: d3a25a56abec3a04da623a6a8c5b5f1b, type: 3}
   isFull: 0
@@ -1475,7 +1475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   quantity: 0
-  maxNumberOfItems: 15
+  maxNumberOfItems: 30
   itemSprite: {fileID: 0}
   emptySprite: {fileID: 21300000, guid: d3a25a56abec3a04da623a6a8c5b5f1b, type: 3}
   isFull: 0
@@ -2428,7 +2428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   quantity: 0
-  maxNumberOfItems: 15
+  maxNumberOfItems: 30
   itemSprite: {fileID: 0}
   emptySprite: {fileID: 21300000, guid: d3a25a56abec3a04da623a6a8c5b5f1b, type: 3}
   isFull: 0
@@ -2530,9 +2530,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   quantity: 0
-  maxNumberOfItems: 15
+  maxNumberOfItems: 30
   itemSprite: {fileID: 0}
-  emptySprite: {fileID: 0}
+  emptySprite: {fileID: 21300000, guid: d3a25a56abec3a04da623a6a8c5b5f1b, type: 3}
   isFull: 0
   quantityText: {fileID: 6344639130380587750}
   itemImage: {fileID: 2612854530652901013}
@@ -3308,7 +3308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   quantity: 0
-  maxNumberOfItems: 15
+  maxNumberOfItems: 30
   itemSprite: {fileID: 0}
   emptySprite: {fileID: 21300000, guid: d3a25a56abec3a04da623a6a8c5b5f1b, type: 3}
   isFull: 0
@@ -3485,7 +3485,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   quantity: 0
-  maxNumberOfItems: 15
+  maxNumberOfItems: 30
   itemSprite: {fileID: 0}
   emptySprite: {fileID: 21300000, guid: d3a25a56abec3a04da623a6a8c5b5f1b, type: 3}
   isFull: 0
@@ -3667,7 +3667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   quantity: 0
-  maxNumberOfItems: 15
+  maxNumberOfItems: 30
   itemSprite: {fileID: 0}
   emptySprite: {fileID: 21300000, guid: d3a25a56abec3a04da623a6a8c5b5f1b, type: 3}
   isFull: 0
@@ -3769,7 +3769,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   quantity: 0
-  maxNumberOfItems: 15
+  maxNumberOfItems: 30
   itemSprite: {fileID: 0}
   emptySprite: {fileID: 21300000, guid: d3a25a56abec3a04da623a6a8c5b5f1b, type: 3}
   isFull: 0
@@ -3946,7 +3946,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   quantity: 0
-  maxNumberOfItems: 15
+  maxNumberOfItems: 30
   itemSprite: {fileID: 0}
   emptySprite: {fileID: 21300000, guid: d3a25a56abec3a04da623a6a8c5b5f1b, type: 3}
   isFull: 0
@@ -4407,7 +4407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   quantity: 0
-  maxNumberOfItems: 15
+  maxNumberOfItems: 30
   itemSprite: {fileID: 0}
   emptySprite: {fileID: 21300000, guid: d3a25a56abec3a04da623a6a8c5b5f1b, type: 3}
   isFull: 0
@@ -4584,7 +4584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   quantity: 0
-  maxNumberOfItems: 15
+  maxNumberOfItems: 30
   itemSprite: {fileID: 0}
   emptySprite: {fileID: 21300000, guid: d3a25a56abec3a04da623a6a8c5b5f1b, type: 3}
   isFull: 0
@@ -5246,7 +5246,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5316055142454808599}
   - component: {fileID: 4764590507588120958}
-  - component: {fileID: 6530209661200759994}
   m_Layer: 5
   m_Name: Inventario
   m_TagString: Untagged
@@ -5286,41 +5285,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &6530209661200759994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5508262984214684094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e1a85ca1fadca548b3efc4ea02c2780, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemSlots:
-  - {fileID: 2914430709548165431}
-  - {fileID: 7309017350798112998}
-  - {fileID: 388124171379904624}
-  - {fileID: 4923618520704608015}
-  - {fileID: 8593041819214629047}
-  - {fileID: 4547899952454036144}
-  - {fileID: 3146143262984365594}
-  - {fileID: 6347800133985356249}
-  - {fileID: 1666850137966892470}
-  - {fileID: 3048404310728607882}
-  - {fileID: 6583753580136648089}
-  - {fileID: 9122546765992914815}
-  - {fileID: 1801090449910803398}
-  - {fileID: 4673097788585597467}
-  - {fileID: 1550839028483416254}
-  - {fileID: 7724929404268621523}
-  - {fileID: 5488101792332627418}
-  - {fileID: 8117198027361435497}
-  - {fileID: 171294933873296350}
-  - {fileID: 1655332430048825717}
-  itemSOs:
-  - {fileID: 11400000, guid: 2ee7633e5c1477d439e057204c2a347f, type: 2}
 --- !u!1 &5512707622807435975
 GameObject:
   m_ObjectHideFlags: 0
@@ -5714,7 +5678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   quantity: 0
-  maxNumberOfItems: 15
+  maxNumberOfItems: 30
   itemSprite: {fileID: 0}
   emptySprite: {fileID: 21300000, guid: d3a25a56abec3a04da623a6a8c5b5f1b, type: 3}
   isFull: 0
@@ -6420,7 +6384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   quantity: 0
-  maxNumberOfItems: 15
+  maxNumberOfItems: 30
   itemSprite: {fileID: 0}
   emptySprite: {fileID: 21300000, guid: d3a25a56abec3a04da623a6a8c5b5f1b, type: 3}
   isFull: 0
@@ -7027,7 +6991,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   quantity: 0
-  maxNumberOfItems: 15
+  maxNumberOfItems: 30
   itemSprite: {fileID: 0}
   emptySprite: {fileID: 21300000, guid: d3a25a56abec3a04da623a6a8c5b5f1b, type: 3}
   isFull: 0
@@ -7863,7 +7827,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   quantity: 0
-  maxNumberOfItems: 15
+  maxNumberOfItems: 30
   itemSprite: {fileID: 0}
   emptySprite: {fileID: 21300000, guid: d3a25a56abec3a04da623a6a8c5b5f1b, type: 3}
   isFull: 0
@@ -8040,7 +8004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   quantity: 0
-  maxNumberOfItems: 15
+  maxNumberOfItems: 30
   itemSprite: {fileID: 0}
   emptySprite: {fileID: 21300000, guid: d3a25a56abec3a04da623a6a8c5b5f1b, type: 3}
   isFull: 0
@@ -8142,7 +8106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   quantity: 0
-  maxNumberOfItems: 15
+  maxNumberOfItems: 30
   itemSprite: {fileID: 0}
   emptySprite: {fileID: 21300000, guid: d3a25a56abec3a04da623a6a8c5b5f1b, type: 3}
   isFull: 0
