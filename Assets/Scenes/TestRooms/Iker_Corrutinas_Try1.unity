@@ -371,14 +371,14 @@ MonoBehaviour:
   points:
   - {fileID: 395222094}
   - {fileID: 1195639180}
-  tarject: {fileID: 1362743830}
+  tarject: {fileID: 0}
   tarjectRigidbody: {fileID: 1362743827}
   agresive: 0
   distanceDirecction: {x: 0, y: 0}
   agresiveVelocity: 3
   detectVelocity: 1
-  playerScript: {fileID: 1362743826}
-  spriteRenderer: {fileID: 1362743839}
+  playerScript: {fileID: 0}
+  spriteRenderer: {fileID: 623464919}
   tarjectPosition: {x: 0, y: 0}
 --- !u!195 &623464914
 NavMeshAgent:
@@ -437,6 +437,11 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 4
+--- !u!212 &623464919 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4387760138679368438, guid: a519b8df6d0ff484b97b549c5f51bd25, type: 3}
+  m_PrefabInstance: {fileID: 2112272504}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &800323822
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,11 +719,6 @@ Rigidbody2D:
 --- !u!4 &1362743830 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2098570872850567413, guid: 8b33b5e9fd1373f43a650334959303f2, type: 3}
-  m_PrefabInstance: {fileID: 1516230502}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &1362743839 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 9188591928737259474, guid: 8b33b5e9fd1373f43a650334959303f2, type: 3}
   m_PrefabInstance: {fileID: 1516230502}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1410535590

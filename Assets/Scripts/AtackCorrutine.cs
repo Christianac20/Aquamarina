@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -42,6 +43,7 @@ public class AtackCorrutine : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         agent.SetDestination(points[currentPosition].position);
+        playerScript = FindObjectOfType<PlayerControllerWater>();
         #endregion
     }
 
@@ -52,7 +54,18 @@ public class AtackCorrutine : MonoBehaviour
         animator.SetBool("Scared", agresive);
 
         #endregion
+
         StartCoroutine(AtackRutine());
+
+        if (!playerScript)
+        {
+           playerScript = FindObjectOfType<PlayerControllerWater>();
+        }
+
+        if (!tarject)
+        {
+            tarject = GameObject.FindWithTag("Player").GetComponent<Transform>();
+        }
     }
 
     IEnumerator AtackRutine()
