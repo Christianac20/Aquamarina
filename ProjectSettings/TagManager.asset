@@ -30,16 +30,13 @@ TagManager:
   - PezHacha
   - Gamba
   - PezFoco
-  - PezCristal
   - Pulpo
   - Calamar
   - PezComecocos
   - AnguilaPelicano
   - PezBala
   - PezLinterna
-  - PezDinosaurio
   - PezGato
-  - PezLaboratorio
   - CameraPhotos
   - CameraPhotosBasePoint
   - SubmarineMap
@@ -48,6 +45,13 @@ TagManager:
   - SubmarineZone1
   - SubmarineZone2
   - PDAMenu
+  - PezFantasmaAzul
+  - PezFantasmaNaranja
+  - PezFantasmaRojo
+  - PezFantasmaRosa
+  - PezGema
+  - Pezqueleto
+  - PezFosil
   layers:
   - Default
   - TransparentFX
