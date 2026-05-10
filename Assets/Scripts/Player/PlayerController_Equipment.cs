@@ -9,7 +9,7 @@ public class PlayerController_Equipment : MonoBehaviour
     #region VARIABLES
     [Header("Variables Input System")]
     [SerializeField] InputActionAsset inputActionAsset;
-    InputAction actionAttack;
+    public InputAction actionAttack;
     InputAction actionEquipo1Camera;
     InputAction actionEquipo2Net;
     InputAction actionEquipo3NetLauncher;
