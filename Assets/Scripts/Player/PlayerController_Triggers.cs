@@ -44,13 +44,6 @@ public class PlayerController_Triggers : MonoBehaviour
     #region TRIGGERS COLLISIONS CHECKING
     void OnTriggerEnter2D(Collider2D trigger)
     {
-        //Detects if player gathers an air bubble
-        if (trigger.gameObject.tag == ("AirBubble"))
-        {
-            timer.currentTime += timer.addAir;
-            Destroy(trigger.gameObject);
-        }
-
         //Detects if player takes damage
         if (trigger.gameObject.tag == ("Damage"))
         {
