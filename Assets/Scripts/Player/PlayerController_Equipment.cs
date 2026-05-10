@@ -17,7 +17,11 @@ public class PlayerController_Equipment : MonoBehaviour
     [Header("Variables generales")]
     [SerializeField] Vector2 moveAmmount;
     public GameObject menuPDA;
+    [SerializeField] float shootingInterval; 
+
+    //Variables base para controlar la cadencia de disparo del arma
     public bool menuPDAActivated;
+    [SerializeField] bool canShoot;
 
     [Header("Variables del Animator")]
     public bool cameraEquipped;
@@ -28,6 +32,7 @@ public class PlayerController_Equipment : MonoBehaviour
     [SerializeField] FollowMouse followMouse;
     [SerializeField] Animator animator;
     [SerializeField] PlayerControllerWater playerControllerWater;
+    [SerializeField] NetLauncher netLauncher;
 
     [Header("Otras Variables")]
     Vector2 movement;
@@ -49,6 +54,7 @@ public class PlayerController_Equipment : MonoBehaviour
         animator = GetComponent<Animator>();
         followMouse = GetComponentInChildren<FollowMouse>();
         playerControllerWater = GetComponentInChildren<PlayerControllerWater>();
+        netLauncher = GetComponentInChildren<NetLauncher>();
         cameraEquipment = GameObject.FindWithTag("CameraPhotos");
         menuPDA = GameObject.FindWithTag("PDAMenu");
         cameraEquipmentBasePosition = GameObject.FindWithTag("CameraPhotosBasePoint");
@@ -62,6 +68,7 @@ public class PlayerController_Equipment : MonoBehaviour
         CameraEquip();
         TakePhoto();
         NetLauncherEquip();
+        NetShoot();
 
         //ANIMATOR VARIABLES SETTINGS
         animator.SetBool("CameraEquipped", cameraEquipped);
@@ -118,6 +125,15 @@ public class PlayerController_Equipment : MonoBehaviour
             netLauncherEquipped = false;
             //followMouse.enabled = false;
             //cameraEquipment.transform.position = cameraEquipmentBasePosition.transform.position;
+        }
+    }
+
+    void NetShoot()
+    {
+        if (netLauncherEquipped && actionAttack.WasPressedThisFrame())
+        {
+            animator.SetTrigger("NetLauncherShoot");
+            netLauncher.Shoot();
         }
     }
 

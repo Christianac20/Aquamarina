@@ -275,6 +275,7 @@ Transform:
   - {fileID: 5014397342919828187}
   - {fileID: 5022500506133678290}
   - {fileID: 311568040918621595}
+  - {fileID: 5331548462189480799}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9188591928737259474
@@ -483,6 +484,7 @@ MonoBehaviour:
   followMouse: {fileID: 0}
   animator: {fileID: 0}
   playerControllerWater: {fileID: 0}
+  netLauncher: {fileID: 0}
   cameraEquipment: {fileID: 0}
   cameraEquipmentBasePosition: {fileID: 0}
 --- !u!114 &7269162332515678563
@@ -617,6 +619,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectIndex: 1
+--- !u!1 &3143862360937697800
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5331548462189480799}
+  - component: {fileID: 4424697517612765828}
+  m_Layer: 0
+  m_Name: NetLauncher
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5331548462189480799
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3143862360937697800}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.645, y: 0.143, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2098570872850567413}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4424697517612765828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3143862360937697800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a30243acd3c7b4524a2faeb30f69b75e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputActionAsset: {fileID: -944628639613478452, guid: 7723ea3da9515134597121e15c516c54, type: 3}
+  netPrefab: {fileID: 9138191430410896773, guid: 3d246caa22ec54917a285457f0736c2f, type: 3}
+  shooter: {fileID: 1454644744081574198}
+  _firePoint: {fileID: 0}
 --- !u!1 &7773553174102043267
 GameObject:
   m_ObjectHideFlags: 0

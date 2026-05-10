@@ -2,15 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item : MonoBehaviour
+public class Fish : MonoBehaviour
 {
     #region VARIABLES
     [SerializeField] string itemName;
     [SerializeField] int quantity;
     [SerializeField] Sprite sprite; //SPRITE QUE SE MOSTRARA EN EL INVENTARIO
-
     [SerializeField] InventoryManager inventoryManager;
-
     #endregion
 
     #region METHODS
@@ -29,19 +27,16 @@ public class Item : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D trigger)
+    public void AddItem()
     {
-        if(trigger.gameObject.tag == "Player")
+        int leftOverItems = inventoryManager.AddItem(itemName, quantity, sprite);
+        if (leftOverItems <= 0)
         {
-            int leftOverItems = inventoryManager.AddItem(itemName, quantity, sprite);
-            if (leftOverItems <= 0)
-            {
-                Destroy(gameObject);
-            }
-            else
-            {
-                quantity = leftOverItems;
-            }
+            Destroy(gameObject);
+        }
+        else
+        {
+            quantity = leftOverItems;
         }
     }
     #endregion
