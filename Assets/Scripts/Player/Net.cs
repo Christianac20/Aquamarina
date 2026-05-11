@@ -42,7 +42,7 @@ public class Net : MonoBehaviour
 		_renderer.color = Color.Lerp(initialColor, finalColor, _percentageCompleted);
 
 		if (_percentageCompleted >= 1f) {
-            Vanish();
+            Vanish(); 
 		}
 	}
 
@@ -53,16 +53,25 @@ public class Net : MonoBehaviour
 		_rigidbody.velocity = movement;
 	}
 
-	private void OnTriggerEnter2D(Collider2D trigger)
+    /*private void OnTriggerEnter2D(Collider2D trigger) //AÑADIR PEZ DIRECTAMENTE AL INVENTARIO
 	{
         if (trigger.gameObject.tag == "Fish")
         {
 			trigger.GetComponent<Fish>().AddItem();
 			Vanish();
         }
+    }*/
+
+    private void OnTriggerEnter2D(Collider2D trigger)
+	{
+        if (trigger.gameObject.tag == "Fish")
+        {
+			trigger.GetComponent<FishCapture>().Captured();
+			Vanish();
+        }
     }
 
-	public void AddDamage()
+    public void AddDamage()
 	{
 		_returning = true;
 		direction = direction * -1f;

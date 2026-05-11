@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2866722711895431351}
   m_Layer: 11
   m_Name: Net
-  m_TagString: Untagged
+  m_TagString: Net
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,7 +105,6 @@ MonoBehaviour:
   livingTime: 2
   initialColor: {r: 1, g: 1, b: 1, a: 1}
   finalColor: {r: 1, g: 1, b: 1, a: 0}
-  explosion: {fileID: 0}
 --- !u!50 &-5992090430245882812
 Rigidbody2D:
   serializedVersion: 4

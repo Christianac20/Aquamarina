@@ -40,5 +40,13 @@ public class Fish : MonoBehaviour
             quantity = leftOverItems;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D trigger)
+    {
+        if (trigger.gameObject.tag == "Player")
+        {
+            AddItem();
+        }
+    }
     #endregion
 }
