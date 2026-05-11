@@ -8,9 +8,4 @@ public class FishName : MonoBehaviour
     public string fishName;
 
     #endregion
-
-    #region METHODS
-
-
-    #endregion
 }

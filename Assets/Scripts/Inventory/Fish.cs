@@ -5,7 +5,7 @@ using UnityEngine;
 public class Fish : MonoBehaviour
 {
     #region VARIABLES
-    [SerializeField] string itemName;
+    [SerializeField] FishName fish;
     [SerializeField] int quantity;
     [SerializeField] Sprite sprite; //SPRITE QUE SE MOSTRARA EN EL INVENTARIO
     [SerializeField] InventoryManager inventoryManager;
@@ -16,6 +16,7 @@ public class Fish : MonoBehaviour
     void Start()
     {
         inventoryManager = FindAnyObjectByType<InventoryManager>();
+        fish = GetComponent<FishName>();
     }
 
     // Update is called once per frame
@@ -29,7 +30,7 @@ public class Fish : MonoBehaviour
 
     public void AddItem()
     {
-        int leftOverItems = inventoryManager.AddItem(itemName, quantity, sprite);
+        int leftOverItems = inventoryManager.AddItem(fish.fishName, quantity, sprite);
         if (leftOverItems <= 0)
         {
             Destroy(gameObject);
