@@ -32,6 +32,7 @@ public class PlayerController_Equipment : MonoBehaviour
     [SerializeField] CameraFollowMouse cameraFollowMouse;
     [SerializeField] NetLauncherFollowMouse netLauncherFollowMouse;
     [SerializeField] Animator animator;
+    [SerializeField] Animator animatorCamera;
     [SerializeField] PlayerControllerWater playerControllerWater;
     [SerializeField] NetLauncher netLauncher;
 
@@ -51,6 +52,7 @@ public class PlayerController_Equipment : MonoBehaviour
 
         //ASIGNO LAS VARIABLES DE COMPONENTES
         animator = GetComponent<Animator>();
+        animatorCamera = GameObject.FindWithTag("CameraPhotos").GetComponent<Animator>();
         cameraFollowMouse = GetComponentInChildren<CameraFollowMouse>();
         netLauncherFollowMouse = GetComponentInChildren<NetLauncherFollowMouse>();
         playerControllerWater = GetComponentInChildren<PlayerControllerWater>();
@@ -97,7 +99,8 @@ public class PlayerController_Equipment : MonoBehaviour
     {
         if (cameraEquipped && actionAttack.WasPressedThisFrame())
         {
-            animator.SetTrigger("CameraTakePhoto");
+            animator.SetTrigger("CameraTakePhoto"); 
+            animatorCamera.SetTrigger("TakePhoto");
         }
     }
 
