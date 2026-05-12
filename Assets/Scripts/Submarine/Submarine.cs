@@ -19,7 +19,6 @@ public class Submarine : MonoBehaviour
     [SerializeField] AnimationClip animacionFinal;
     [SerializeField] GameObject submarineMark;
 
-    [SerializeField] GameObject buttonZone1;
     [SerializeField] GameObject buttonZone2;
     [SerializeField] GameObject buttonZone3;
     [SerializeField] GameObject buttonZone4;
@@ -58,14 +57,22 @@ public class Submarine : MonoBehaviour
         submarineZones = FindObjectOfType<SubmarineZoneDiscovered>();
     }
 
+    private void Start()
+    {
+        buttonZone2.SetActive(false);
+        buttonZone3.SetActive(false);
+        buttonZone4.SetActive(false);
+        buttonZone5.SetActive(false);
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (canvasAnimator == null)
+        if (!canvasAnimator)
         {
             canvasAnimator = GetComponentInChildren<Animator>();
         }
-        if (submarineMap == null)
+        if (!submarineMap)
         {
             submarineMap = GameObject.FindWithTag("SubmarineMap");
         }
@@ -85,17 +92,25 @@ public class Submarine : MonoBehaviour
 
         switch (sceneToTPCode)
         {
-            case "TP Scene 0":
-                sceneToTPSubmarine = 0;
-                submarinePositionOnEnter = submarinePositionsArrayOnEnter[0];
-                break;
             case "TP Scene 1":
                 sceneToTPSubmarine = 1;
-                submarinePositionOnEnter = submarinePositionsArrayOnEnter[1];
+                submarinePositionOnEnter = submarinePositionsArrayOnEnter[0];
                 break;
             case "TP Scene 2":
                 sceneToTPSubmarine = 2;
+                submarinePositionOnEnter = submarinePositionsArrayOnEnter[1];
+                break;
+            case "TP Scene 3":
+                sceneToTPSubmarine = 3;
                 submarinePositionOnEnter = submarinePositionsArrayOnEnter[2];
+                break;
+            case "TP Scene 4":
+                sceneToTPSubmarine = 4;
+                submarinePositionOnEnter = submarinePositionsArrayOnEnter[3];
+                break;
+            case "TP Scene 5":
+                sceneToTPSubmarine = 5;
+                submarinePositionOnEnter = submarinePositionsArrayOnEnter[4];
                 break;
 
         }
@@ -179,7 +194,7 @@ public class Submarine : MonoBehaviour
         }
 
         //Activar - desacttivar boton de viaje rapido con submarino a la zona 3 en funcion de si esta descubierta o no
-        if (submarineZones.zone2Discovered)
+        if (submarineZones.zone3Discovered)
         {
             buttonZone3.SetActive(true);
         }
@@ -189,7 +204,7 @@ public class Submarine : MonoBehaviour
         }
 
         //Activar - desacttivar boton de viaje rapido con submarino a la zona 4 en funcion de si esta descubierta o no
-        if (submarineZones.zone2Discovered)
+        if (submarineZones.zone4Discovered)
         {
             buttonZone4.SetActive(true);
         }
@@ -199,7 +214,7 @@ public class Submarine : MonoBehaviour
         }
 
         //Activar - desacttivar boton de viaje rapido con submarino a la zona 5 en funcion de si esta descubierta o no
-        if (submarineZones.zone2Discovered)
+        if (submarineZones.zone5Discovered)
         {
             buttonZone5.SetActive(true);
         }

@@ -84,6 +84,21 @@ public class SubmarineZoneDiscovered : MonoBehaviour
         {
             zone2Discovered = true;
         }
+
+        if (trigger.gameObject.tag == ("SubmarineZone3"))
+        {
+            zone3Discovered = true;
+        }
+
+        if (trigger.gameObject.tag == ("SubmarineZone4"))
+        {
+            zone4Discovered = true;
+        }
+
+        if (trigger.gameObject.tag == ("SubmarineZone5"))
+        {
+            zone5Discovered = true;
+        }
     }
     #endregion
 }

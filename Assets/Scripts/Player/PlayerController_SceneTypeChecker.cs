@@ -16,7 +16,6 @@ public class PlayerController_SceneTypeChecker : MonoBehaviour
     public bool facingRight = false;
 
     //Comprobaciones de Ground/Water para desactivar controles segun tipo de nivel
-    public bool currentSceneIsGrounded;
     public int sceneIndex;
     [SerializeField] Scene currentScene;
 

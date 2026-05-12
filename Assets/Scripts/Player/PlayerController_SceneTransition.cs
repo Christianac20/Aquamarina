@@ -32,10 +32,7 @@ public class SceneTransition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canvasFades == null)
-        {
-            canvasFades = GameObject.FindWithTag("PanelFades");
-        }
+
     }
 
     public void SceneChange()
