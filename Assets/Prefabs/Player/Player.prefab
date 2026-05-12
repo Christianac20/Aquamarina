@@ -577,6 +577,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputActionAsset: {fileID: -944628639613478452, guid: 7723ea3da9515134597121e15c516c54, type: 3}
+  actionAttack:
+    m_Name: Action Attack
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: fbf11018-5bc7-43a8-9c79-3d33e8859912
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   moveAmmount: {x: 0, y: 0}
   menuPDA: {fileID: 0}
   shootingInterval: 0
