@@ -6,6 +6,7 @@ public class Fish : MonoBehaviour
 {
     #region VARIABLES
     [SerializeField] FishName fish;
+    [SerializeField] FishCapture fishCapture;
     [SerializeField] int quantity;
     [SerializeField] Sprite sprite; //SPRITE QUE SE MOSTRARA EN EL INVENTARIO
     [SerializeField] InventoryManager inventoryManager;
@@ -17,6 +18,7 @@ public class Fish : MonoBehaviour
     {
         inventoryManager = FindAnyObjectByType<InventoryManager>();
         fish = GetComponent<FishName>();
+        fishCapture = GetComponent<FishCapture>();
     }
 
     // Update is called once per frame
@@ -43,7 +45,7 @@ public class Fish : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D trigger)
     {
-        if (trigger.gameObject.tag == "Player")
+        if (trigger.gameObject.tag == "Player" && fishCapture.moveToPlayer)
         {
             AddItem();
         }

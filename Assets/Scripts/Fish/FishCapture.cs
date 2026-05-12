@@ -10,7 +10,7 @@ public class FishCapture : MonoBehaviour
     [SerializeField] Transform player;
     [SerializeField] float speed = 10f; // Units per second
 
-    [SerializeField] bool moveToPlayer = false;
+    public bool moveToPlayer = false;
     [SerializeField] Fish fishScript;
 
     #endregion
@@ -21,15 +21,18 @@ public class FishCapture : MonoBehaviour
     {
         fishStandard = GetComponent<SpriteRenderer>();
         player = GameObject.FindWithTag("FishGatherer").GetComponent<Transform>();
-        fishScript = GetComponent<Fish>();
-
-        fishCaptured.GetComponent<SpriteRenderer>().enabled = false;
-        fishScript.enabled = false;
+        fishScript = GetComponent<Fish>();  
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!moveToPlayer)
+        {
+            fishScript.enabled = false;
+            fishCaptured.GetComponent<SpriteRenderer>().enabled = false;
+        }
+
         if (moveToPlayer)
         {
             if (transform.position != player.position)
@@ -41,7 +44,7 @@ public class FishCapture : MonoBehaviour
 
     public void Captured()
     {
-        fishStandard.enabled = false; //Desactivo sprite normal
+        //fishStandard.enabled = false; //Desactivo sprite normal
         fishCaptured.GetComponent<SpriteRenderer>().enabled = true; //Activo sprite de la version capturada
         fishScript.enabled = true;
         moveToPlayer = true;
