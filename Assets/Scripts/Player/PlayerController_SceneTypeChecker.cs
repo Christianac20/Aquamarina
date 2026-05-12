@@ -43,7 +43,7 @@ public class PlayerController_SceneTypeChecker : MonoBehaviour
     void Update()
     {
         currentScene = SceneManager.GetActiveScene(); //Obtiene la escena actual
-        sceneIndex = currentScene.buildIndex; //Obtiene el indice de la escena actual (0 es la terrestre)
+        sceneIndex = currentScene.buildIndex; //Obtiene el indice de la escena actual (1 es la terrestre)
 
         if (sceneIndex == 1)
         {

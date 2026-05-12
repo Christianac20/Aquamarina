@@ -4527,6 +4527,7 @@ GameObject:
   - component: {fileID: 3228647472855599565}
   - component: {fileID: 2077537927190780614}
   - component: {fileID: 1307379717044262469}
+  - component: {fileID: 3309806736694747587}
   m_Layer: 5
   m_Name: PDA
   m_TagString: PDAMenu
@@ -4617,6 +4618,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &3309806736694747587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135084539107404387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 825a8166ab8d0e74ca46f2f11064094f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectIndex: 5
 --- !u!1 &1211723411092760048
 GameObject:
   m_ObjectHideFlags: 0
