@@ -75,7 +75,7 @@ public class BasicCorrutine : MonoBehaviour
        {
             if (detectVelocity < playerScript.speedMultiplier) //Detecta si el multiplicador de velocidad del player es mayor que su límite de detección, en tal caso, se cumple el if
             {
-                Debug.Log("Collide");
+                Debug.Log("tontopolla AY AY AY");
                 scared = true;
             }
        }
