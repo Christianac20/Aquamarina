@@ -93,32 +93,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -127,9 +101,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 486.6667
-        width: 243.33333
-        height: 243.33333
+        y: 512
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,8 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a30ec2c87347e24e9b9de54d62c85cf
-      internalID: 402801006
+      spriteID: 9aeaf813779b23e42bed7d4f6a67f972
+      internalID: -752653554
       vertices: []
       indices: 
       edges: []
@@ -147,10 +121,10 @@ TextureImporter:
       name: PA_Laboratorio_Tanque_Peces_256x256_1
       rect:
         serializedVersion: 2
-        x: 243
-        y: 486.6667
-        width: 243.33333
-        height: 243.33333
+        x: 256
+        y: 512
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: afa43c4bb9f1ad647bab70e1450ea1c3
-      internalID: 1420018670
+      spriteID: f68e5d4778fcb5942865a67a906c16f4
+      internalID: -269894441
       vertices: []
       indices: 
       edges: []
@@ -168,10 +142,10 @@ TextureImporter:
       name: PA_Laboratorio_Tanque_Peces_256x256_2
       rect:
         serializedVersion: 2
-        x: 486
-        y: 486.6667
-        width: 243.33333
-        height: 243.33333
+        x: 512
+        y: 512
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 116887f16f0c0f941968b909e4c2d491
-      internalID: -765100568
+      spriteID: 1a6a31251b02d104488b473c54bf7c37
+      internalID: 1288615565
       vertices: []
       indices: 
       edges: []
@@ -190,9 +164,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 243.66667
-        width: 243.33333
-        height: 243.33333
+        y: 256
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3cce2e6c4d6e1364098f03c3eb8441ee
-      internalID: -2122238107
+      spriteID: 0524f7bfc7531414cb5997a22efae55f
+      internalID: 1930888994
       vertices: []
       indices: 
       edges: []
@@ -210,10 +184,10 @@ TextureImporter:
       name: PA_Laboratorio_Tanque_Peces_256x256_4
       rect:
         serializedVersion: 2
-        x: 243
-        y: 243.66667
-        width: 243.33333
-        height: 243.33333
+        x: 256
+        y: 256
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,8 +195,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52c6f52ee23c4da4e8bf25e84cd60d53
-      internalID: 684611309
+      spriteID: 380a0d8a0b299e24abe9e85861b9d544
+      internalID: 1011590859
       vertices: []
       indices: 
       edges: []
@@ -238,11 +212,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PA_Laboratorio_Tanque_Peces_256x256_0: 402801006
-      PA_Laboratorio_Tanque_Peces_256x256_1: 1420018670
-      PA_Laboratorio_Tanque_Peces_256x256_2: -765100568
-      PA_Laboratorio_Tanque_Peces_256x256_3: -2122238107
-      PA_Laboratorio_Tanque_Peces_256x256_4: 684611309
+      PA_Laboratorio_Tanque_Peces_256x256_0: -752653554
+      PA_Laboratorio_Tanque_Peces_256x256_1: -269894441
+      PA_Laboratorio_Tanque_Peces_256x256_2: 1288615565
+      PA_Laboratorio_Tanque_Peces_256x256_3: 1930888994
+      PA_Laboratorio_Tanque_Peces_256x256_4: 1011590859
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
