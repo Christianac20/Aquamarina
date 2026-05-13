@@ -29,6 +29,15 @@ public class Paralax : MonoBehaviour
         movement = cam.transform.position.x * (1 - parallaxEffectx);
 
         transform.position = new Vector3 (startPosx + distancex, startPosy + distancey, transform.position.z);
+        /*
+        if (movement > startPosx + (length / 2))
+        {
+            startPosx += length;
+        }
+        else if (movement < startPosx - (length / 2))
+        {
+            startPosx -= length;
+        }
 
         if (movement > startPosx + length)
         {
@@ -38,5 +47,6 @@ public class Paralax : MonoBehaviour
         {
             startPosx -= length;
         }
+        */
     }
 }
