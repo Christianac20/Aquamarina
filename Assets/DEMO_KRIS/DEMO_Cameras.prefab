@@ -114,7 +114,7 @@ Transform:
   m_GameObject: {fileID: 2944955711058970994}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.1111112, y: 1.8845628, z: -9.953485}
+  m_LocalPosition: {x: 1.2222219, y: 1.8845631, z: -9.953485}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -155,7 +155,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4
+  orthographic size: 3.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -458,10 +458,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -7, y: 10}
-      - {x: -7, y: -5}
-      - {x: 12, y: -5}
-      - {x: 12, y: 10}
+    - - {x: -22, y: 10}
+      - {x: -22, y: -2}
+      - {x: 22, y: -2}
+      - {x: 22, y: 10}
   m_UseDelaunayMesh: 0
 --- !u!1 &6944965286304351890
 GameObject:
@@ -673,7 +673,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 4
+    OrthographicSize: 3.5
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -784,7 +784,6 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -100, y: 20}
-      - {x: -102.81613, y: -0.48727298}
       - {x: -100, y: -25}
       - {x: 5, y: -25}
       - {x: 5, y: 20}
