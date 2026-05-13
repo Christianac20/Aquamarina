@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuPrincipal.unity
     guid: 8062374f4892076438564d1d87b77a76
   - enabled: 1
-    path: Assets/Scenes/SubmarinoBaseCientifica.unity
-    guid: 0a782a57943990a4281940468e72df08
+    path: Assets/Scenes/Lab.unity
+    guid: b65da6b150bc7e248bba904269909229
   - enabled: 1
     path: Assets/Scenes/AlgyZone.unity
     guid: bb02a8c6bd2acad45b58adb84654ef94
