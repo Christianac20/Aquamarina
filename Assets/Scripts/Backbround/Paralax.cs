@@ -19,6 +19,7 @@ public class Paralax : MonoBehaviour
         startPosx = transform.position.x;
         startPosy = transform.position.y;
         length = GetComponent<SpriteRenderer>().bounds.size.x; //Coge los límites del sprite
+        cam = GameObject.FindWithTag("MainCamera");
     }
 
     void FixedUpdate()
