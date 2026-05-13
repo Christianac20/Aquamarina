@@ -13,6 +13,7 @@ public class Item : MonoBehaviour
     #endregion
 
     #region METHODS
+    void Start()
     {
         inventoryManager = FindAnyObjectByType<InventoryManager>();
     }
