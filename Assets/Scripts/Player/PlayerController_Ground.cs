@@ -12,7 +12,7 @@ public class PlayerController_Ground : MonoBehaviour
     [Header("Variables Input System")]
     [SerializeField] InputActionAsset inputActionAsset;
 
-    [SerializeField] InputAction actionMoveGround;
+    [SerializeField] InputAction actionMove;
 
     [Header("Variables generales")]
     public Vector2 moveAmmount;
@@ -35,7 +35,7 @@ public class PlayerController_Ground : MonoBehaviour
     #endregion
 
     #region METHODS
-    private void OnEnable() //Desactivo el action map innecesario y lo sustituyo por el adecuado a la escena
+    /*private void OnEnable() //Desactivo el action map innecesario y lo sustituyo por el adecuado a la escena
     {
         inputActionAsset.FindActionMap("Player_Ground").Enable();
         inputActionAsset.FindActionMap("Player_Water").Disable();
@@ -44,12 +44,12 @@ public class PlayerController_Ground : MonoBehaviour
     {
         inputActionAsset.FindActionMap("Player_Ground").Disable();
         inputActionAsset.FindActionMap("Player_Water").Enable();
-    }
+    }*/
 
     void Awake() //Usado para guardar componentes al iniciar
     {
         //ASIGNO LAS VARIABLES DE ACCIONES DEL INPUT SYSTEM
-        actionMoveGround = InputSystem.actions.FindAction("Player_Ground/Move");
+        actionMove = InputSystem.actions.FindAction("Move");
 
         rigidbodyPlayer = GetComponent<Rigidbody2D>(); // Compartida
         animator = GetComponent<Animator>();
@@ -60,7 +60,7 @@ public class PlayerController_Ground : MonoBehaviour
     void Update()
     {
         //Movement vector
-        moveAmmount = actionMoveGround.ReadValue<Vector2>();
+        moveAmmount = actionMove.ReadValue<Vector2>();
 
         //Checking if gravity is right for the level type
         CheckGravity();

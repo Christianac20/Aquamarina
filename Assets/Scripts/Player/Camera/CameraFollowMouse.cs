@@ -19,7 +19,7 @@ public class CameraFollowMouse : MonoBehaviour
     void Start()
     {
         mainCamera = GameObject.FindWithTag("MainCamera");
-        player = GameObject.FindWithTag("PlayerWater");
+        player = GameObject.FindWithTag("Player");
         mainCameraComponent = mainCamera.GetComponent<Camera>();
         playerControllerWater = player.GetComponent<PlayerControllerWater>();
     }

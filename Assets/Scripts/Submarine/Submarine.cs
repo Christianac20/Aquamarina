@@ -54,6 +54,8 @@ public class Submarine : MonoBehaviour
         canvasFades = GameObject.FindWithTag("PanelFades");
         //playerWater = GameObject.FindWithTag("PlayerWater");
         //playerGround = GameObject.FindWithTag("PlayerGround");
+        playerControllerWater = FindObjectOfType<PlayerControllerWater>();
+        playerControllerGround = FindObjectOfType<PlayerController_Ground>();
         player = GameObject.FindWithTag("Player");
         submarinePositionOnEnter = GameObject.FindWithTag("SubmarinePositions");
 
@@ -148,14 +150,14 @@ public class Submarine : MonoBehaviour
         {
             submarineMap = GameObject.FindWithTag("SubmarineMap");
         }
-        if (!playerControllerWater)
+        /*if (!playerControllerWater)
         {
             playerControllerWater = FindObjectOfType<PlayerControllerWater>();
         }
         if (!playerControllerGround)
         {
             playerControllerGround = FindObjectOfType<PlayerController_Ground>();
-        }
+        }*/
         if (!sceneTypeChecker)
         {
             sceneTypeChecker = FindObjectOfType<PlayerController_SceneTypeChecker>();
@@ -242,14 +244,8 @@ public class Submarine : MonoBehaviour
         canvasAnimator.SetTrigger("Iniciar");
 
         //Desactivo los controles del player
-        if (playerControllerWater)
-        {
-            playerControllerWater.enabled = false;
-        }
-        if (playerControllerGround)
-        {
-            playerControllerGround.enabled = false;
-        }
+        playerControllerWater.enabled = false;
+        playerControllerGround.enabled = false;
 
         yield return new WaitForSeconds(animacionFinal.length);
 
@@ -269,16 +265,8 @@ public class Submarine : MonoBehaviour
         player.transform.position = submarinePositionOnEnter.transform.position;
 
         //Reactivo los controles del player
-        if (playerControllerWater)
-        {
-            playerControllerWater.enabled = true;
-        }
-        if (playerControllerGround)
-        {
-            playerControllerGround.enabled = true;
-        }
-
-
+        playerControllerWater.enabled = true;
+        playerControllerGround.enabled = true;
     }
 
     void SubmarineMapButtonsActivate()
@@ -326,7 +314,8 @@ public class Submarine : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("PlayerWater") || collision.gameObject.CompareTag("PlayerGround"))
+        //if (collision.gameObject.CompareTag("PlayerWater") || collision.gameObject.CompareTag("PlayerGround"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             isPlayerInSubmarineRange = true;
             submarineMark.SetActive(true); // Activa el objeto visual para indicar que el jugador está en rango.
@@ -335,7 +324,8 @@ public class Submarine : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("PlayerWater") || collision.gameObject.CompareTag("PlayerGround"))
+        //if (collision.gameObject.CompareTag("PlayerWater") || collision.gameObject.CompareTag("PlayerGround"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             isPlayerInSubmarineRange = false;
             submarineMark.SetActive(false); // Desactiva el objeto visual para indicar que el jugador ya no está en rango.
