@@ -15985,8 +15985,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1454644744081574198, guid: 8b33b5e9fd1373f43a650334959303f2, type: 3}
+      insertIndex: 11
+      addedObject: {fileID: 1728037703}
   m_SourcePrefab: {fileID: 100100000, guid: 8b33b5e9fd1373f43a650334959303f2, type: 3}
+--- !u!1 &1728037702 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1454644744081574198, guid: 8b33b5e9fd1373f43a650334959303f2, type: 3}
+  m_PrefabInstance: {fileID: 1728037701}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1728037703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728037702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d9120149c3fc9e4588eb604265ab200, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputActionAsset: {fileID: -944628639613478452, guid: 7723ea3da9515134597121e15c516c54, type: 3}
+  menuPDA: {fileID: 0}
+  menuPDAActivated: 0
 --- !u!1 &1782701349 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4673839752087458915, guid: d53d4c39df3c3e34f8a076554b5d8a3b, type: 3}
