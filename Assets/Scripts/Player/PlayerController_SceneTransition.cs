@@ -9,13 +9,9 @@ public class SceneTransition : MonoBehaviour
     [SerializeField] Animator canvasAnimator;
 
     [SerializeField] AnimationClip animacionFinal;
-    //[SerializeField] GameObject playerWater;
-    //[SerializeField] GameObject playerGround;
     [SerializeField] GameObject canvasFades;
     [SerializeField] PlayerControllerWater playerControllerWater;
     [SerializeField] PlayerController_Ground playerControllerGround;
-    //[SerializeField] PlayerController_Triggers playerTriggersWater;
-    //[SerializeField] PlayerController_Triggers playerTriggersGround;
     [SerializeField] GameObject player;
     [SerializeField] PlayerController_SceneTypeChecker player_SceneTypeChecker;
     [SerializeField] PlayerController_Triggers playerController_Triggers;
@@ -30,13 +26,9 @@ public class SceneTransition : MonoBehaviour
         canvasAnimator = canvasFades.GetComponent<Animator>();
         player = GameObject.FindWithTag("Player");
         player_SceneTypeChecker = FindObjectOfType<PlayerController_SceneTypeChecker>();
-        //playerWater = GameObject.FindWithTag("PlayerWater");
-        //playerGround = GameObject.FindWithTag("PlayerGround");
         playerControllerWater = FindObjectOfType<PlayerControllerWater>();
         playerControllerGround = FindObjectOfType<PlayerController_Ground>();
         playerController_Triggers = FindObjectOfType<PlayerController_Triggers>();
-        //playerTriggersWater = playerControllerWater.GetComponent<PlayerController_Triggers>();
-        //playerTriggersGround = playerControllerWater.GetComponent<PlayerController_Triggers>();
     }
 
     // Update is called once per frame
