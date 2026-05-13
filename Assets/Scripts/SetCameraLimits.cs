@@ -30,75 +30,50 @@ public class SetpolygonColliders : MonoBehaviour
     {
         switch (sceneIndex)
         {
-            case 1: //Si es la escena 1
-                /*for (int i = 0; i <= polygonColliders.Length; i++) //Cicla por todos los colliders dejando activo solo el indicado. Por precaucion.
-                {
-                    if (i == 0) //Deja activo el collider de la scene 1
-                    {
-                        polygonColliders[i].enabled = true;
-                    }
-                    else //Desactiva los demas colliders
-                    {
-                        polygonColliders[i].enabled = false;
-                    }
-                }*/
-                vCamConfinerComponent.m_BoundingShape2D = polygonColliders[0];
+            case 1: //Si es la escena 1 deja activo el collider de la scene 1 y Desactiva los demas colliders
+                polygonColliders[0].enabled = true;
+                polygonColliders[1].enabled = false;
+                polygonColliders[2].enabled = false;
+                polygonColliders[3].enabled = false;
+                polygonColliders[4].enabled = false;
+
+                vCamConfinerComponent.m_BoundingShape2D = polygonColliders[0]; //Asigna el collider correcto para la escena como camLimits
                 break;
-            case 2: //Si es la escena 2
-                /*for (int i = 0; i <= polygonColliders.Length; i++) //Cicla por todos los colliders dejando activo solo el indicado. Por precaucion.
-                {
-                    if (i == 1) //Deja activo el collider de la scene 2
-                    {
-                        polygonColliders[i].enabled = true;
-                    }
-                    else //Desactiva los demas colliders
-                    {
-                        polygonColliders[i].enabled = false;
-                    }
-                }*/
-                vCamConfinerComponent.m_BoundingShape2D = polygonColliders[1];
+            case 2: //Si es la escena 2 deja activo el collider de la scene 2 y Desactiva los demas colliders
+                polygonColliders[0].enabled = false;
+                polygonColliders[1].enabled = true;
+                polygonColliders[2].enabled = false;
+                polygonColliders[3].enabled = false;
+                polygonColliders[4].enabled = false;
+
+                vCamConfinerComponent.m_BoundingShape2D = polygonColliders[1]; //Asigna el collider correcto para la escena como camLimits
                 break;
-            case 3: //Si es la escena 3
-                /*for (int i = 0; i <= polygonColliders.Length; i++) //Cicla por todos los colliders dejando activo solo el indicado. Por precaucion.
-                {
-                    if (i == 2) //Deja activo el collider de la scene 3
-                    {
-                        polygonColliders[i].enabled = true;
-                    }
-                    else //Desactiva los demas colliders
-                    {
-                        polygonColliders[i].enabled = false;
-                    }
-                }*/
-                vCamConfinerComponent.m_BoundingShape2D = polygonColliders[2];
+            case 3: //Si es la escena 3 deja activo el collider de la scene 3 y Desactiva los demas colliders
+                polygonColliders[0].enabled = false;
+                polygonColliders[1].enabled = false;
+                polygonColliders[2].enabled = true;
+                polygonColliders[3].enabled = false;
+                polygonColliders[4].enabled = false;
+
+                vCamConfinerComponent.m_BoundingShape2D = polygonColliders[2]; //Asigna el collider correcto para la escena como camLimits
                 break;
-            case 4: //Si es la escena 4
-                /*for (int i = 0; i <= polygonColliders.Length; i++) //Cicla por todos los colliders dejando activo solo el indicado. Por precaucion.
-                {
-                    if (i == 3) //Deja activo el collider de la scene 4
-                    {
-                        polygonColliders[i].enabled = true;
-                    }
-                    else //Desactiva los demas colliders
-                    {
-                        polygonColliders[i].enabled = false;
-                    }
-                }*/
-                vCamConfinerComponent.m_BoundingShape2D = polygonColliders[3];
+            case 4: //Si es la escena 4 deja activo el collider de la scene 4 y Desactiva los demas colliders
+                polygonColliders[0].enabled = false;
+                polygonColliders[1].enabled = false;
+                polygonColliders[2].enabled = false;
+                polygonColliders[3].enabled = true;
+                polygonColliders[4].enabled = false;
+
+                vCamConfinerComponent.m_BoundingShape2D = polygonColliders[3]; //Asigna el collider correcto para la escena como camLimits
                 break;
-            case 5: //Si es la escena 5
-                /*for (int i = 0; i <= polygonColliders.Length; i++) //Cicla por todos los colliders dejando activo solo el indicado. Por precaucion.
-                {
-                    if (i == 4) //Deja activo el collider de la scene 5
-                    {
-                        polygonColliders[i].enabled = true;
-                    }
-                    else //Desactiva los demas colliders
-                    {
-                        polygonColliders[i].enabled = false;
-                    }
-                }*/
-                vCamConfinerComponent.m_BoundingShape2D = polygonColliders[4];
+            case 5: //Si es la escena 5 deja activo el collider de la scene 5 y Desactiva los demas colliders
+                polygonColliders[0].enabled = false;
+                polygonColliders[1].enabled = false;
+                polygonColliders[2].enabled = false;
+                polygonColliders[3].enabled = false;
+                polygonColliders[4].enabled = true;
+
+                vCamConfinerComponent.m_BoundingShape2D = polygonColliders[4]; //Asigna el collider correcto para la escena como camLimits
                 break;
         }
     }
