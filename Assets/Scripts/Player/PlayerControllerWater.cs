@@ -12,7 +12,7 @@ public class PlayerControllerWater : MonoBehaviour
     [Header("Variables Input System")]
     [SerializeField] InputActionAsset inputActionAsset;
 
-    InputAction actionMove;
+    InputAction actionMoveWater;
     InputAction actionLook;
     InputAction actionRun;
     InputAction actionInteract;
@@ -39,10 +39,21 @@ public class PlayerControllerWater : MonoBehaviour
     #endregion
 
     #region METHODS
+    private void OnEnable() //Desactivo el action map innecesario y lo sustituyo por el adecuado a la escena
+    {
+        inputActionAsset.FindActionMap("Player_Ground").Disable();
+        inputActionAsset.FindActionMap("Player_Water").Enable();
+    }
+    private void OnDisable() //Desactivo el action map innecesario y lo sustituyo por el adecuado a la escena
+    {
+        inputActionAsset.FindActionMap("Player_Ground").Enable();
+        inputActionAsset.FindActionMap("Player_Water").Disable();
+    }
+
     void Awake() //ASIGNO COMPONENTES Y ACTIONS
     {
         //ASIGNO LAS VARIABLES DE ACCIONES DEL INPUT SYSTEM
-        actionMove = InputSystem.actions.FindAction("Move");
+        actionMoveWater = InputSystem.actions.FindAction("Player_Water/Move");
         actionLook = InputSystem.actions.FindAction("Look");
         actionRun = InputSystem.actions.FindAction("Run");
         actionInteract = InputSystem.actions.FindAction("Interact");
@@ -57,7 +68,7 @@ public class PlayerControllerWater : MonoBehaviour
     void Update()
     {
         //Movement vector
-        moveAmmount = actionMove.ReadValue<Vector2>();
+        moveAmmount = actionMoveWater.ReadValue<Vector2>();
 
         //Checking Vertical Movement for animator state machine
         if (moveAmmount.y == 0)

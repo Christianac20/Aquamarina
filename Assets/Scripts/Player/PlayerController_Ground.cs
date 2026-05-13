@@ -12,7 +12,7 @@ public class PlayerController_Ground : MonoBehaviour
     [Header("Variables Input System")]
     [SerializeField] InputActionAsset inputActionAsset;
 
-    InputAction actionMove;
+    [SerializeField] InputAction actionMoveGround;
 
     [Header("Variables generales")]
     public Vector2 moveAmmount;
@@ -34,10 +34,22 @@ public class PlayerController_Ground : MonoBehaviour
     //public AudioManager audioManager;
     #endregion
 
+    #region METHODS
+    private void OnEnable() //Desactivo el action map innecesario y lo sustituyo por el adecuado a la escena
+    {
+        inputActionAsset.FindActionMap("Player_Ground").Enable();
+        inputActionAsset.FindActionMap("Player_Water").Disable();
+    }
+    private void OnDisable() //Desactivo el action map innecesario y lo sustituyo por el adecuado a la escena
+    {
+        inputActionAsset.FindActionMap("Player_Ground").Disable();
+        inputActionAsset.FindActionMap("Player_Water").Enable();
+    }
+
     void Awake() //Usado para guardar componentes al iniciar
     {
         //ASIGNO LAS VARIABLES DE ACCIONES DEL INPUT SYSTEM
-        actionMove = InputSystem.actions.FindAction("Move");
+        actionMoveGround = InputSystem.actions.FindAction("Player_Ground/Move");
 
         rigidbodyPlayer = GetComponent<Rigidbody2D>(); // Compartida
         animator = GetComponent<Animator>();
@@ -48,7 +60,7 @@ public class PlayerController_Ground : MonoBehaviour
     void Update()
     {
         //Movement vector
-        moveAmmount = actionMove.ReadValue<Vector2>();
+        moveAmmount = actionMoveGround.ReadValue<Vector2>();
 
         //Checking if gravity is right for the level type
         CheckGravity();
@@ -104,19 +116,16 @@ public class PlayerController_Ground : MonoBehaviour
     //MAIN BASIC MOVEMENT
     void Walking()
     {
-        if (isAttacking == false)
-        {
-            rigidbodyPlayer.velocity = new Vector2(moveAmmount.x * speed, 0);
+        rigidbodyPlayer.velocity = new Vector2(moveAmmount.x * speed, 0);
 
-            //FLIP PLAYER
-            if (moveAmmount.x < 0f && sceneTypeChecker.facingRight == true)
-            {
-                Flip();
-            }
-            else if (moveAmmount.x > 0f && sceneTypeChecker.facingRight == false)
-            {
-                Flip();
-            }
+        //FLIP PLAYER
+        if (moveAmmount.x < 0f && sceneTypeChecker.facingRight == true)
+        {
+            Flip();
+        }
+        else if (moveAmmount.x > 0f && sceneTypeChecker.facingRight == false)
+        {
+            Flip();
         }
     }
 
@@ -128,5 +137,6 @@ public class PlayerController_Ground : MonoBehaviour
         localScaleX = localScaleX * -1f;
         transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);
     }
+    #endregion
     #endregion
 }

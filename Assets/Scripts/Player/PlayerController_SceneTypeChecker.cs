@@ -16,8 +16,13 @@ public class PlayerController_SceneTypeChecker : MonoBehaviour
     [SerializeField] Scene currentScene;
 
     //Almacena referencias a los scripts de control de player para desactivarlos segun tipo de nivel y otros datos necesarios
-    [SerializeField] GameObject playerWater;
-    [SerializeField] GameObject playerGround;
+    //[SerializeField] GameObject playerWater; //SI SE USASE LA MECANICA DE 2 PLAYERS
+    //[SerializeField] GameObject playerGround; //SI SE USASE LA MECANICA DE 2 PLAYERS
+    public bool playerGroundIsActive;
+    public bool playerWaterIsActive;
+    [SerializeField] GameObject player; //GameObject del player
+    [SerializeField] PlayerControllerWater playerControllerWater;
+    [SerializeField] PlayerController_Ground playerControllerGround;
 
     #endregion
 
@@ -25,8 +30,12 @@ public class PlayerController_SceneTypeChecker : MonoBehaviour
     // Awake is called when the script instance is being loaded
     void Awake()
     {
-        playerWater = GameObject.FindWithTag("PlayerWater");
-        playerGround = GameObject.FindWithTag("PlayerGround");
+        //playerWater = GameObject.FindWithTag("PlayerWater");
+        //playerGround = GameObject.FindWithTag("PlayerGround");
+
+        player = GameObject.FindWithTag("Player");
+        playerControllerWater = player.GetComponent<PlayerControllerWater>();
+        playerControllerGround = player.GetComponent<PlayerController_Ground>();
     }
 
     // Update is called once per frame
@@ -39,25 +48,22 @@ public class PlayerController_SceneTypeChecker : MonoBehaviour
 
         if (sceneIndex == 1)
         {
-            playerGround.SetActive(true); //Activa el control terrestre
-            playerWater.SetActive(false); //Desactiva el control acuático
+            playerControllerWater.enabled = false;
+            playerControllerGround.enabled = true;
+            //playerGround.SetActive(true); //Activa el control terrestre
+            //playerWater.SetActive(false); //Desactiva el control acuático
+            //playerGroundIsActive = true; //Valida como verdadera la variable que indica que playerGround es el activo
+            //playerWaterIsActive = false; //Valida como falsa la variable que indica que playerWater es el activo
         }
         else
         {
-            playerWater.SetActive(true); //Activa el control terrestre
-            playerGround.SetActive(false); //Desactiva el control acuático
+            playerControllerWater.enabled = true;
+            playerControllerGround.enabled = false;
+            //playerWater.SetActive(true); //Activa el control terrestre
+            //playerGround.SetActive(false); //Desactiva el control acuático
+            //playerWaterIsActive = true; //Valida como falsa la variable que indica que playerGround es el activo
+            //playerGroundIsActive = false; //Valida como verdadera la variable que indica que playerWater es el activo
         }
-
-        IgualarTransform();
-    }
-
-    void IgualarTransform()
-    {
-        playerGround.transform.position = playerWater.transform.position;
-        playerWater.transform.position = playerGround.transform.position;
-
-        playerGround.transform.localScale = playerWater.transform.localScale;
-        playerWater.transform.localScale = playerGround.transform.localScale;
     }
     #endregion
 }

@@ -535,9 +535,10 @@ MonoBehaviour:
   sceneIndex: 0
   currentScene:
     m_Handle: 0
-  animator: {fileID: 0}
+  playerGroundIsActive: 0
+  playerWaterIsActive: 0
+  player: {fileID: 0}
   playerControllerWater: {fileID: 0}
-  playerControllerEquipment: {fileID: 0}
   playerControllerGround: {fileID: 0}
 --- !u!114 &2223255431538443812
 MonoBehaviour:
@@ -575,6 +576,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputActionAsset: {fileID: -944628639613478452, guid: 7723ea3da9515134597121e15c516c54, type: 3}
+  actionMoveGround:
+    m_Name: Action Move Ground
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 7c4141d6-5adf-4274-815f-b33aea1a896b
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   moveAmmount: {x: 0, y: 0}
   speed: 3
   longIdleTime: 5

@@ -167,6 +167,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputActionAsset: {fileID: -944628639613478452, guid: 7723ea3da9515134597121e15c516c54, type: 3}
+  actionMoveGround:
+    m_Name: Action Move Ground
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: b8081d47-18df-43b2-b8e8-60e7dbda077a
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   moveAmmount: {x: 0, y: 0}
   speed: 3
   longIdleTime: 5

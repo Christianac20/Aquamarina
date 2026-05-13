@@ -11,7 +11,8 @@ public class Submarine : MonoBehaviour
     [Header("Variables Input System")]
     [SerializeField] InputActionAsset inputActionAsset;
 
-    InputAction actionInteract;
+    InputAction actionInteractGround;
+    InputAction actionInteractWater;
 
     [Header("Variables Generales")]
     [SerializeField] GameObject canvasFades;
@@ -24,8 +25,9 @@ public class Submarine : MonoBehaviour
     [SerializeField] GameObject buttonZone4;
     [SerializeField] GameObject buttonZone5;
 
-    [SerializeField] GameObject playerWater;
-    [SerializeField] GameObject playerGround;
+    //[SerializeField] GameObject playerWater;
+    //[SerializeField] GameObject playerGround;
+    [SerializeField] GameObject player;
 
     int sceneToTPSubmarine;
     public string sceneToTPCode;
@@ -45,12 +47,14 @@ public class Submarine : MonoBehaviour
     void Awake()
     {
         //ASIGNO LAS VARIABLES DE ACCIONES DEL INPUT SYSTEM
-        actionInteract = InputSystem.actions.FindAction("Interact");
+        actionInteractGround = InputSystem.actions.FindAction("Player_Ground/Interact");
+        actionInteractWater = InputSystem.actions.FindAction("Player_Water/Interact");
         //submarineMark = GameObject.FindWithTag("SubmarineRangeMark");
         //submarineMap = GameObject.FindWithTag("SubmarineMap");
         canvasFades = GameObject.FindWithTag("PanelFades");
-        playerWater = GameObject.FindWithTag("PlayerWater");
-        playerGround = GameObject.FindWithTag("PlayerGround");
+        //playerWater = GameObject.FindWithTag("PlayerWater");
+        //playerGround = GameObject.FindWithTag("PlayerGround");
+        player = GameObject.FindWithTag("Player");
         submarinePositionOnEnter = GameObject.FindWithTag("SubmarinePositions");
 
         canvasAnimator = canvasFades.GetComponent<Animator>();
@@ -164,15 +168,15 @@ public class Submarine : MonoBehaviour
 
     void MapHandler()
     {
-        if (isPlayerInSubmarineRange && actionInteract.WasPressedThisFrame())
+        if (isPlayerInSubmarineRange && (actionInteractWater.WasPressedThisFrame() || actionInteractGround.WasPressedThisFrame()))
         {
             submarineMap.SetActive(true);
             isSubmarineMapOpen = true;
         }
 
-        if (isSubmarineMapOpen == true)
+        if (isSubmarineMapOpen)
         {
-            if (playerGround)
+            /*if (playerGround)
             {
                 playerControllerGround.enabled = false;
             }
@@ -188,7 +192,10 @@ public class Submarine : MonoBehaviour
             else
             {
                 Debug.Log("PlayerWater esta off en esta escena");
-            }
+            }*/
+
+            playerControllerGround.enabled = false;
+            playerControllerWater.enabled = false;
         }
     }
 
@@ -207,6 +214,27 @@ public class Submarine : MonoBehaviour
     {
         submarineMap.SetActive(false);
         isSubmarineMapOpen = false;
+
+        /*if (playerGround)
+        {
+            playerControllerGround.enabled = true;
+        }
+        else
+        {
+            Debug.Log("PlayerGround esta off en esta escena");
+        }
+
+        if (playerWater)
+        {
+            playerControllerWater.enabled = true;
+        }
+        else
+        {
+            Debug.Log("PlayerWater esta off en esta escena");
+        }*/
+
+        playerControllerGround.enabled = true;
+        playerControllerWater.enabled = true;
     }
 
     IEnumerator ChangeSceneSubmarine()
@@ -229,14 +257,16 @@ public class Submarine : MonoBehaviour
 
         //muevo al player al punto de la pantalla en que quiero que aparezca
         //playerPositionOnEnter = GameObject.FindWithTag("PositionPlayerOnEntry");
-        if (playerWater)
+        /*if (playerWater)
         {
             playerWater.transform.position = submarinePositionOnEnter.transform.position;
         }
         else if (playerGround)
         {
             playerGround.transform.position = submarinePositionOnEnter.transform.position;
-        }
+        }*/
+
+        player.transform.position = submarinePositionOnEnter.transform.position;
 
         //Reactivo los controles del player
         if (playerControllerWater)
