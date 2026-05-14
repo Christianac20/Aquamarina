@@ -8,7 +8,7 @@ public class InventoryManager : MonoBehaviour
     #region VARIABLES
     public ItemSlot[] itemSlots;
     public ItemSO[] itemSOs;
-
+    public AudioManager audioManager;
     #endregion
 
     // Start is called before the first frame update
@@ -51,6 +51,28 @@ public class InventoryManager : MonoBehaviour
                 }
                 return leftOverItems;
             }
+        }
+        switch (itemName)
+        {
+            case "O2 Bottle":
+                audioManager.PlaySFX(audioManager.BombonaOxigeno);
+                break;
+            case "MenaHierro":
+                audioManager.PlaySFX(audioManager.Plastico);
+                break;
+            case "Cobre":
+                audioManager.PlaySFX(audioManager.Cobre);
+                break;
+            case "Hierro":
+                audioManager.PlaySFX(audioManager.Hierro);
+                break;
+            case "Cristal":
+                audioManager.PlaySFX(audioManager.Cristal);
+                break;
+            case "Burbuja":
+                audioManager.PlaySFX(audioManager.Oxigeno);
+                break;
+            
         }
         return quantity;
     }

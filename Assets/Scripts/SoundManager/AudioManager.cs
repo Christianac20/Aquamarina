@@ -8,18 +8,36 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource SFXSource;
 
     [Header("------------Audio Clip------------")]
-    public AudioClip Hurt_01;
-    public AudioClip Jump_01;
-    public AudioClip Jump_02;
-    public AudioClip Pickup_01;
-    public AudioClip Punch_01;
-    public AudioClip Kick_01;
-    public AudioClip Purificator_01;
-    public AudioClip WebShoot_01;
-    public AudioClip DieEnemy_01;
-    public AudioClip Boom;
-    public AudioClip Hit;
-    public AudioClip Heal_01;
+
+    // ITEMS
+    
+    public AudioClip Plastico;
+    public AudioClip Cobre;
+    public AudioClip Cristal;
+    public AudioClip Hierro;
+    public AudioClip Oxigeno;
+    public AudioClip BombonaOxigeno;
+    [Space]
+    // MENU
+
+    public AudioClip IniciarJuego;
+    public AudioClip MenuClick;
+
+    // PDA
+    [Space]
+
+    public AudioClip Casilla;
+    public AudioClip AbrirPDA;
+    public AudioClip CerrarPDA;
+    public AudioClip SeleccionarPDA;
+
+    // PLAYER
+    [Space]
+    public AudioClip Hurt01Agh;
+    public AudioClip Hurt02Uuf;
+    public AudioClip DispararRed;
+    public AudioClip RecogerRed;
+
 
     public void PlaySFX(AudioClip clip)
     {

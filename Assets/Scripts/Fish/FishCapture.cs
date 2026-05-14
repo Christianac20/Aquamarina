@@ -10,6 +10,8 @@ public class FishCapture : MonoBehaviour
     [SerializeField] Transform player;
     [SerializeField] float speed = 10f; // Units per second
 
+    public AudioManager audioManager; //Manager de audio
+
     public bool moveToPlayer = false;
     [SerializeField] Fish fishScript;
 
