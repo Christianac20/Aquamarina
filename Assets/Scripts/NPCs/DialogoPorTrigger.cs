@@ -12,7 +12,7 @@ public class DialogoPorTrigger : MonoBehaviour
 
     InputAction actionInteract;
 
-    [Header("Dialogue Test Variables")]
+    [Header("Dialogue Triggers Variables")]
     [SerializeField, TextArea(2, 4 )] private string[] dialogueLines; // Referencia al texto que se mostrrará del character hablando.
     [SerializeField] private Sprite[] portraitsSprites; // Referencia a la imagen portrait que se mostrará del character hablando.
     [SerializeField] private AudioClip[] voices; // Referencia al audio que se reproducirá durante el diálogo, si es necesario y para cada personaje
@@ -24,10 +24,11 @@ public class DialogoPorTrigger : MonoBehaviour
     public PlayerController_Ground playerControllerGround; // Referencia al controlador del jugador, si es necesario para otras interacciones.
     [SerializeField] private int charsToPlayAudio; // Número de caracteres a escribir antes de reproducir el audio del NPC.
     [SerializeField] private bool isPlayerTalking = false;
+    [SerializeField] float countdownDialogue = 5.0f;
     
     [Space]
 
-    [Header("Dialogue Test References")]
+    [Header("Dialogue Triggers References")]
     [SerializeField] private GameObject dialoguePanel; // Referencia al panel de diálogo que se mostrará al jugador.
     [SerializeField] private TMP_Text dialogueText; // Referencia al cuadro de diálogo que se mostrará al jugador.
     [SerializeField] private AudioSource audioSource; // Referencia al audio que se reproducirá durante el diálogo, si es necesario.
@@ -52,7 +53,9 @@ public class DialogoPorTrigger : MonoBehaviour
     // Update is called once per frame. Used to see what the player does each frame.
     void Update()
     {
-        if(isPlayerInDialogueRange)
+        portrait.sprite = portraitsSprites[lineIndex];
+
+        if (isPlayerInDialogueRange)
         {
             if (!didDialogueStart)
             {
@@ -60,22 +63,20 @@ public class DialogoPorTrigger : MonoBehaviour
             }
             else if (dialogueText.text == dialogueLines[lineIndex])
             {
-                if (actionInteract.WasPressedThisFrame())
+                if (actionInteract.WasPressedThisFrame()) //Pasado X tiempo, va a la siguiente linea de dialogo
                 {
                     NextDialogueLine(); // Si el diálogo ya ha comenzado y la línea actual está completa, muestra la siguiente línea.
                 }
             }
             else
             {
-                if (actionInteract.WasPressedThisFrame())
+                if (actionInteract.WasPressedThisFrame()) 
                 {
                     StopAllCoroutines(); // Si el jugador presiona F antes de que termine la línea actual, detiene la corrutina de escritura.
                     dialogueText.text = dialogueLines[lineIndex]; // Muestra la línea completa inmediatamente.
                 }
             }
         }
-
-        portrait.sprite = portraitsSprites[lineIndex];
     }
 
     private void StartDialogue()
@@ -84,9 +85,7 @@ public class DialogoPorTrigger : MonoBehaviour
         dialoguePanel.SetActive(true); // Activa el panel de diálogo.
         lineIndex = 0; // Reinicia el índice de la línea de diálogo actual.
         StartCoroutine(ShowLine()); // Inicia la corrutina para mostrar la primera línea de diálogo.
-        //Time.timeScale = 0f; // Pausa el juego para que el jugador pueda leer el diálogo sin distracciones.
-        playerControllerWater.enabled = false; // Desactiva el controlador del jugador para evitar movimientos durante el diálogo.
-        playerControllerGround.enabled = false; // Desactiva el controlador del jugador para evitar movimientos durante el diálogo.
+        //countdownDialogue -= Time.deltaTime; //Cuenta atrás para la siguiente línea de dialogo
     }
 
     private void NextDialogueLine()
@@ -100,10 +99,9 @@ public class DialogoPorTrigger : MonoBehaviour
         {
             didDialogueStart = false; // Resetea la variable de control del diálogo.
             dialoguePanel.SetActive(false);
-            //Time.timeScale = 1f; // Reanuda el juego una vez que se han mostrado todas las líneas de diálogo.
             lineIndex = 0; // Reinicia el índice de la línea de diálogo actual.
-            playerControllerWater.enabled = true; // Reactiva el controlador del jugador para que pueda moverse nuevamente.
-        }   playerControllerGround.enabled = true; // Reactiva el controlador del jugador para que pueda moverse nuevamente.
+            this.gameObject.SetActive(false);
+        }
     }
 
     private void SelectAudioClip()
@@ -119,7 +117,6 @@ public class DialogoPorTrigger : MonoBehaviour
     private IEnumerator ShowLine()
     {
         SelectAudioClip(); // Selecciona el clip de audio correcto según quién esté hablando.
-        //SelectPortrait(); // Selecciona el portrait correcto según quién esté hablando.
         dialogueText.text = string.Empty;
         int charIndex = 0; // Índice del carácter actual que se está mostrando.
 
@@ -137,19 +134,11 @@ public class DialogoPorTrigger : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision) //Si entra el player en la zona pone a correr el dialogo
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             isPlayerInDialogueRange = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            isPlayerInDialogueRange = false;
         }
     }
     #endregion

@@ -12,7 +12,7 @@ public class DialogoPorInteract : MonoBehaviour
 
     InputAction actionInteract;
 
-    [Header("Dialogue Test Variables")]
+    [Header("Dialogue Interact Variables")]
     [SerializeField, TextArea(2, 4 )] private string[] dialogueLines; // Referencia al texto que se mostrrará del character hablando.
     [SerializeField] private Sprite[] portraitsSprites; // Referencia a la imagen portrait que se mostrará del character hablando.
     [SerializeField] private AudioClip[] voices; // Referencia al audio que se reproducirá durante el diálogo, si es necesario y para cada personaje
@@ -27,7 +27,7 @@ public class DialogoPorInteract : MonoBehaviour
     
     [Space]
 
-    [Header("Dialogue Test References")]
+    [Header("Dialogue Interact References")]
     [SerializeField] private GameObject dialogueMark; // Referencia al objeto visual que se mostrará al jugador cuando esté en rango.
     [SerializeField] private GameObject dialoguePanel; // Referencia al panel de diálogo que se mostrará al jugador.
     [SerializeField] private TMP_Text dialogueText; // Referencia al cuadro de diálogo que se mostrará al jugador.
@@ -53,6 +53,8 @@ public class DialogoPorInteract : MonoBehaviour
     // Update is called once per frame. Used to see what the player does each frame.
     void Update()
     {
+        portrait.sprite = portraitsSprites[lineIndex];
+
         if(isPlayerInDialogueRange && actionInteract.WasPressedThisFrame())
         {
             if (!didDialogueStart)
@@ -69,8 +71,6 @@ public class DialogoPorInteract : MonoBehaviour
                 dialogueText.text = dialogueLines[lineIndex]; // Muestra la línea completa inmediatamente.
             }
         }
-
-        portrait.sprite = portraitsSprites[lineIndex];
     }
 
     private void StartDialogue()
@@ -97,7 +97,7 @@ public class DialogoPorInteract : MonoBehaviour
             didDialogueStart = false; // Resetea la variable de control del diálogo.
             dialoguePanel.SetActive(false);
             dialogueMark.SetActive(true); // Reactiva el objeto visual de entrada.
-            //Time.timeScale = 1f; // Reanuda el juego una vez que se han mostrado todas las líneas de diálogo.
+            Time.timeScale = 1f; // Reanuda el juego una vez que se han mostrado todas las líneas de diálogo.
             lineIndex = 0; // Reinicia el índice de la línea de diálogo actual.
             playerControllerWater.enabled = true; // Reactiva el controlador del jugador para que pueda moverse nuevamente.
         }   playerControllerGround.enabled = true; // Reactiva el controlador del jugador para que pueda moverse nuevamente.
@@ -116,7 +116,6 @@ public class DialogoPorInteract : MonoBehaviour
     private IEnumerator ShowLine()
     {
         SelectAudioClip(); // Selecciona el clip de audio correcto según quién esté hablando.
-        //SelectPortrait(); // Selecciona el portrait correcto según quién esté hablando.
         dialogueText.text = string.Empty;
         int charIndex = 0; // Índice del carácter actual que se está mostrando.
 
