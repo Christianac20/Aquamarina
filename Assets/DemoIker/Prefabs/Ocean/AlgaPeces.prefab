@@ -973,6 +973,7 @@ MonoBehaviour:
   fishCaptured: {fileID: 7038223642666856582}
   player: {fileID: 0}
   speed: 10
+  audioManager: {fileID: 0}
   moveToPlayer: 0
   fishScript: {fileID: 4295136514618922951}
 --- !u!4 &8535864495526887824 stripped
@@ -1511,6 +1512,7 @@ MonoBehaviour:
   fishCaptured: {fileID: 6451268054690072105}
   player: {fileID: 0}
   speed: 10
+  audioManager: {fileID: 0}
   moveToPlayer: 0
   fishScript: {fileID: 6876644258540458031}
 --- !u!1001 &8798746477683490608
