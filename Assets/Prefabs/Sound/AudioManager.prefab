@@ -309,8 +309,8 @@ MonoBehaviour:
   Hierro: {fileID: 8300000, guid: 79f670d1f0dd5d6418a3ebce2e99ed24, type: 3}
   Oxigeno: {fileID: 8300000, guid: 7a7dadec565205d4195d2d2e51e023e8, type: 3}
   BombonaOxigeno: {fileID: 8300000, guid: 2adc2fae865a85845aefb55abfea5e0e, type: 3}
-  IniciarJuego: {fileID: 8300000, guid: a0033628597c92b44b30101af6215921, type: 3}
-  MenuClick: {fileID: 8300000, guid: 3111e80861b681e499888ae3ea5b381e, type: 3}
+  IniciarJuego: {fileID: 8300000, guid: 21d50b3ecc0cf9e4cbe59795bd43fdc3, type: 3}
+  MenuClick: {fileID: 8300000, guid: bcbb123588291614d94f9577adf225ef, type: 3}
   Casilla: {fileID: 8300000, guid: 00c1a301236b71340b88cc31acbb29d0, type: 3}
   AbrirPDA: {fileID: 8300000, guid: 6052ec1cce314374985a60fdfeca9814, type: 3}
   CerrarPDA: {fileID: 8300000, guid: 54781edf82005a944853ae842b42e96c, type: 3}
