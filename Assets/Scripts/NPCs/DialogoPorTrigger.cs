@@ -25,8 +25,7 @@ public class DialogoPorTrigger : MonoBehaviour
     public PlayerController_Ground playerControllerGround; // Referencia al controlador del jugador, si es necesario para otras interacciones.
     [SerializeField] private int charsToPlayAudio; // Número de caracteres a escribir antes de reproducir el audio del NPC.
     [SerializeField] private bool isPlayerTalking = false;
-    [SerializeField] float countdownDialogue = 5.0f;
-    
+
     [Space]
 
     [Header("Dialogue Triggers References")]
@@ -56,37 +55,26 @@ public class DialogoPorTrigger : MonoBehaviour
     {
         portrait.sprite = portraitsSprites[lineIndex];
 
-        // Evitar que el contador baje de 0
-        if (countdownDialogue < 0f)
-        {
-            countdownDialogue = 0f;
-        }
-
         if (isPlayerInDialogueRange)
         {
             if (!didDialogueStart)
             {
                 StartDialogue();
             }
-            else if (dialogueText.text == dialogueLines[lineIndex])
+            else if (dialogueText.text == dialogueLines[lineIndex] && actionInteract.WasPressedThisFrame())
             {
                 NextDialogueLine(); // Si el diálogo ya ha comenzado y la línea actual está completa, muestra la siguiente línea.
             }
-            else
+            else if (actionInteract.WasPressedThisFrame())
             {
-                if (actionInteract.WasPressedThisFrame()) 
-                {
-                    StopAllCoroutines(); // Si el jugador presiona F antes de que termine la línea actual, detiene la corrutina de escritura.
-                    dialogueText.text = dialogueLines[lineIndex]; // Muestra la línea completa inmediatamente.
-                }
+                StopAllCoroutines(); // Si el jugador presiona F antes de que termine la línea actual, detiene la corrutina de escritura.
+                dialogueText.text = dialogueLines[lineIndex]; // Muestra la línea completa inmediatamente.
             }
         }
     }
 
     private void StartDialogue()
     {
-        //Actualizar el contador
-        countdownDialogue -= Time.deltaTime;
         didDialogueStart = true; //Dialogo empezado
         dialoguePanel.SetActive(true); // Activa el panel de diálogo.
         lineIndex = 0; // Reinicia el índice de la línea de diálogo actual.
@@ -95,23 +83,17 @@ public class DialogoPorTrigger : MonoBehaviour
 
     private void NextDialogueLine()
     {
-        if (countdownDialogue <= 0f)
+        lineIndex++; // Incrementa el índice de la línea de diálogo actual.
+        if (lineIndex < dialogueLines.Length)
         {
-            lineIndex++; // Incrementa el índice de la línea de diálogo actual.
-            if (lineIndex < dialogueLines.Length)
-            {
-                StartCoroutine(ShowLine()); // Muestra la siguiente línea de diálogo.
-            }
-            else
-            {
-                didDialogueStart = false; // Resetea la variable de control del diálogo.
-                lineIndex = 0; // Reinicia el índice de la línea de diálogo actual.
-                this.gameObject.SetActive(false);
-            }
-
-            countdownDialogue = 5.0f;
+            StartCoroutine(ShowLine()); // Muestra la siguiente línea de diálogo.
         }
-
+        else
+        {
+            didDialogueStart = false; // Resetea la variable de control del diálogo.
+            lineIndex = 0; // Reinicia el índice de la línea de diálogo actual.
+            this.gameObject.SetActive(false);
+        }
     }
 
     private void SelectAudioClip()

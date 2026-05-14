@@ -34,11 +34,11 @@ RectTransform:
   - {fileID: 8090859520559419024}
   m_Father: {fileID: 6994077671752676144}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 50}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -50}
   m_SizeDelta: {x: 1600, y: 400}
-  m_Pivot: {x: 0.5, y: 0}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &4828766689134383474
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -199,9 +199,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.15, y: 0.25}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.75
 --- !u!114 &3556123155350979536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,16 +246,16 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0f58777695428da4ca611baf4bd8fa09, type: 3}
   - {fileID: 21300000, guid: 42ce0812d85469842aa39680b5fd39fe, type: 3}
   voices:
-  - {fileID: 8300000, guid: 9663f4a28232d4d4e89d69137bab70f7, type: 3}
-  - {fileID: 8300000, guid: d6ae8c3aaea7620418a1ac3863752a47, type: 3}
-  - {fileID: 8300000, guid: 8e7bb9154a45b454cb12ef13a48ae2ee, type: 3}
-  - {fileID: 8300000, guid: 8e7bb9154a45b454cb12ef13a48ae2ee, type: 3}
-  - {fileID: 8300000, guid: 8e7bb9154a45b454cb12ef13a48ae2ee, type: 3}
-  - {fileID: 8300000, guid: 8e7bb9154a45b454cb12ef13a48ae2ee, type: 3}
-  - {fileID: 8300000, guid: 8e7bb9154a45b454cb12ef13a48ae2ee, type: 3}
-  - {fileID: 8300000, guid: 8e7bb9154a45b454cb12ef13a48ae2ee, type: 3}
-  - {fileID: 8300000, guid: 8e7bb9154a45b454cb12ef13a48ae2ee, type: 3}
-  - {fileID: 8300000, guid: 8e7bb9154a45b454cb12ef13a48ae2ee, type: 3}
+  - {fileID: 8300000, guid: be30adf8efed9d840a7f4723ca297d95, type: 3}
+  - {fileID: 8300000, guid: 618e4c6b82f337440bdd5f8d4687380b, type: 3}
+  - {fileID: 8300000, guid: be30adf8efed9d840a7f4723ca297d95, type: 3}
+  - {fileID: 8300000, guid: 618e4c6b82f337440bdd5f8d4687380b, type: 3}
+  - {fileID: 8300000, guid: be30adf8efed9d840a7f4723ca297d95, type: 3}
+  - {fileID: 8300000, guid: 618e4c6b82f337440bdd5f8d4687380b, type: 3}
+  - {fileID: 8300000, guid: be30adf8efed9d840a7f4723ca297d95, type: 3}
+  - {fileID: 8300000, guid: 618e4c6b82f337440bdd5f8d4687380b, type: 3}
+  - {fileID: 8300000, guid: 618e4c6b82f337440bdd5f8d4687380b, type: 3}
+  - {fileID: 8300000, guid: be30adf8efed9d840a7f4723ca297d95, type: 3}
   lineIndex: 0
   typingTime: 0.05
   playerControllerWater: {fileID: 0}
