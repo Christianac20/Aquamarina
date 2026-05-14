@@ -19,19 +19,16 @@ public class PlayerController_SceneTypeChecker : MonoBehaviour
     public bool playerGroundIsActive;
     public bool playerWaterIsActive;
     [SerializeField] GameObject player; //GameObject del player
-    [SerializeField] PlayerControllerWater playerControllerWater;
-    [SerializeField] PlayerController_Ground playerControllerGround;
-    [SerializeField] Animator animatorPlayer;
+    [SerializeField] PlayerControllerWater playerControllerWater; //Script controller de water
+    [SerializeField] PlayerController_Ground playerControllerGround; //Script controller de tierra
+    [SerializeField] Animator animatorPlayer; //Animator del player
 
     #endregion
 
-    #region METHODS
+    #region METHODS 
     // Awake is called when the script instance is being loaded
-    void Awake()
+    void Awake() //Guardo preferencias de objects y componentes/scripts
     {
-        //playerWater = GameObject.FindWithTag("PlayerWater");
-        //playerGround = GameObject.FindWithTag("PlayerGround");
-
         player = GameObject.FindWithTag("Player");
         animatorPlayer = player.GetComponent<Animator>();
         playerControllerWater = player.GetComponent<PlayerControllerWater>();
@@ -41,22 +38,20 @@ public class PlayerController_SceneTypeChecker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //playerControllerWater.enabled = false; //MUERE
-
         currentScene = SceneManager.GetActiveScene(); //Obtiene la escena actual
         sceneIndex = currentScene.buildIndex; //Obtiene el indice de la escena actual (1 es la terrestre)
 
-        if (sceneIndex == 1)
+        if (sceneIndex == 1) //Si la escena actual es la 1
         {
-            playerControllerWater.enabled = false;
-            playerControllerGround.enabled = true;
-            animatorPlayer.SetBool("IsGrounded", true);
+            playerControllerWater.enabled = false; //Desactivo el controller de water
+            playerControllerGround.enabled = true; //Activo el controller de tierra
+            animatorPlayer.SetBool("IsGrounded", true); //Activo el bool de grounded para el animator del player
         }
-        else
+        else //En demás casos
         {
-            playerControllerWater.enabled = true;
-            playerControllerGround.enabled = false;
-            animatorPlayer.SetBool("IsGrounded", false);
+            playerControllerWater.enabled = true; //Activo el controller de water
+            playerControllerGround.enabled = false; //Desactivo el controller de tierra;
+            animatorPlayer.SetBool("IsGrounded", false); //Desactivo el bool de grounded para el animator del player
         }
     }
     #endregion

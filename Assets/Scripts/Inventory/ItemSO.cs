@@ -6,15 +6,15 @@ using UnityEngine;
 public class ItemSO : ScriptableObject
 {
     #region VARIABLES
-    public string itemName;
-    public StatToChange statToChange = new StatToChange();
-    public float ammountTOChangeStat;
-    [SerializeField] Timer timer;
+    public string itemName; //Nombre del item a recoger
+    public StatToChange statToChange = new StatToChange(); //Funcion para cambiar una stat del player
+    public float ammountTOChangeStat; //Cantidad que lo cambia
+    [SerializeField] Timer timer; //Script del timer
 
     #endregion
 
     #region METHODS
-    void Update()
+    void Update() //Busca el timer si no lo tiene asignado
     {
         if (timer != null)
         {
@@ -23,21 +23,21 @@ public class ItemSO : ScriptableObject
         }
         else 
         {
-            Debug.Log("FAH");
+            Debug.LogError("FAH");
         }
 
     }
 
-    public bool UseItem()
+    public bool UseItem() //Metodo para usar item desde el inventario
     {
-        if(statToChange == StatToChange.health)
+        if(statToChange == StatToChange.health) //Si el scriptable object vale pa cambiar la stat de salud
         {
-            Timer timer = GameObject.Find("Player").GetComponent<Timer>();
-            if (timer.currentTime == timer.totalTime)
+            Timer timer = GameObject.Find("Player").GetComponent<Timer>(); //Encuentra el timer
+            if (timer.currentTime == timer.totalTime) //Si ta a tope no hace nada
             {
                 return false;
             }
-            else
+            else //Si no está a tope, añade la cantidad definida de aire al timer
             {
                 timer.AddTime(ammountTOChangeStat);
 
@@ -48,7 +48,7 @@ public class ItemSO : ScriptableObject
         return false;
     }
 
-    public enum StatToChange
+    public enum StatToChange //Variables que puede cambiar el scriptable object (Salud solo)
     {
         none,
         health
