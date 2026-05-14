@@ -20,7 +20,6 @@ public class DialogoPorInteract : MonoBehaviour
     private bool didDialogueStart = false; // Variable para controlar si el diálogo está activo o no.
     [SerializeField] private int lineIndex = 0; // Índice de la línea de diálogo actual. 
     [SerializeField] private float typingTime = 0.05f;
-    public PlayerControllerWater playerControllerWater; // Referencia al controlador del jugador, si es necesario para otras interacciones.
     public PlayerController_Ground playerControllerGround; // Referencia al controlador del jugador, si es necesario para otras interacciones.
     [SerializeField] private int charsToPlayAudio; // Número de caracteres a escribir antes de reproducir el audio del NPC.
     [SerializeField] private bool isPlayerTalking = false;
@@ -41,7 +40,6 @@ public class DialogoPorInteract : MonoBehaviour
     {
         //ASIGNO LAS VARIABLES DE ACCIONES DEL INPUT SYSTEM
         actionInteract = InputSystem.actions.FindAction("Interact");
-        playerControllerWater = FindObjectOfType<PlayerControllerWater>();
         playerControllerGround = FindObjectOfType<PlayerController_Ground>();
     }
 
@@ -80,7 +78,6 @@ public class DialogoPorInteract : MonoBehaviour
         dialogueMark.SetActive(false); // Desactiva el objeto visual de entrada.
         lineIndex = 0; // Reinicia el índice de la línea de diálogo actual.
         StartCoroutine(ShowLine()); // Inicia la corrutina para mostrar la primera línea de diálogo.
-        playerControllerWater.enabled = false; // Desactiva el controlador del jugador para evitar movimientos durante el diálogo.
         playerControllerGround.enabled = false; // Desactiva el controlador del jugador para evitar movimientos durante el diálogo.
     }
 
@@ -98,7 +95,6 @@ public class DialogoPorInteract : MonoBehaviour
             dialogueMark.SetActive(true); // Reactiva el objeto visual de entrada.
             Time.timeScale = 1f; // Reanuda el juego una vez que se han mostrado todas las líneas de diálogo.
             lineIndex = 0; // Reinicia el índice de la línea de diálogo actual.
-            playerControllerWater.enabled = true; // Reactiva el controlador del jugador para que pueda moverse nuevamente.
         }   playerControllerGround.enabled = true; // Reactiva el controlador del jugador para que pueda moverse nuevamente.
     }
 

@@ -55,6 +55,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4867641835388456241}
     m_Modifications:
+    - target: {fileID: 1271630912616950909, guid: d7b90f56c06c64841a671ae82410bce7, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271630912616950909, guid: d7b90f56c06c64841a671ae82410bce7, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271630912616950909, guid: d7b90f56c06c64841a671ae82410bce7, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2661109405429102786, guid: d7b90f56c06c64841a671ae82410bce7, type: 3}
       propertyPath: m_Pivot.y
       value: 1
@@ -641,6 +653,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4867641835388456241}
     m_Modifications:
+    - target: {fileID: 1271630912616950909, guid: d7b90f56c06c64841a671ae82410bce7, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271630912616950909, guid: d7b90f56c06c64841a671ae82410bce7, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271630912616950909, guid: d7b90f56c06c64841a671ae82410bce7, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2661109405429102786, guid: d7b90f56c06c64841a671ae82410bce7, type: 3}
       propertyPath: m_Pivot.y
       value: 1
