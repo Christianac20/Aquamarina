@@ -130,6 +130,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4383796325700263358, guid: 9c47fa293dfc2494cbc80dbf7b87966e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d558a1429d4b6c142bed7efbbaf36664, type: 3}
     - target: {fileID: 7922845264884746704, guid: 9c47fa293dfc2494cbc80dbf7b87966e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1784.5261
@@ -179,11 +183,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c47fa293dfc2494cbc80dbf7b87966e, type: 3}
---- !u!4 &283811573 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3102758830118733411, guid: 2a216f61b6ebbd14198b5a6fff4b8e35, type: 3}
-  m_PrefabInstance: {fileID: 1767437135}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &419362293
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,11 +890,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5755209430882835367, guid: 0c824bad95ba0554bb25a95933d83097, type: 3}
   m_PrefabInstance: {fileID: 1122531926}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1147510615 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8591679202496401645, guid: 2a216f61b6ebbd14198b5a6fff4b8e35, type: 3}
-  m_PrefabInstance: {fileID: 1767437135}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1295056733
 GameObject:
@@ -13706,18 +13700,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6830088021626282063, guid: 2a216f61b6ebbd14198b5a6fff4b8e35, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8898080885006130357, guid: 2a216f61b6ebbd14198b5a6fff4b8e35, type: 3}
       propertyPath: m_Name
       value: AlgaPeces
       objectReference: {fileID: 0}
-    - target: {fileID: 9041282575678473978, guid: 2a216f61b6ebbd14198b5a6fff4b8e35, type: 3}
-      propertyPath: points.Array.data[0]
-      value: 
-      objectReference: {fileID: 283811573}
-    - target: {fileID: 9041282575678473978, guid: 2a216f61b6ebbd14198b5a6fff4b8e35, type: 3}
-      propertyPath: points.Array.data[1]
-      value: 
-      objectReference: {fileID: 1147510615}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
