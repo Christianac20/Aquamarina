@@ -97,25 +97,10 @@ public class AtackCorrutine : MonoBehaviour
                 distanceDifference = Vector2.Distance(transform.position, tarjectPosition);
 
                 Vector2 distanceDirecction = (transform.position - tarjectPosition).normalized;
-                Debug.Log("ÑomÑom");
-            /*
-                if (distanceDifference > 0.1)
-                {
-                    if (transform.localScale.x > 0.1)
-                    {
-                        Flip();
-                    }
+                Debug.Log("Comer");
 
-                }
 
-                else if (distanceDifference < 0.1)
-                {
-                    if (transform.localScale.x < 0.1)
-                    {
-                        Flip();
-                    }
-                }
-            */
+            
             transform.Translate(distanceDirecction * -1f * agresiveVelocity * Time.deltaTime);
 
                 if(distanceDifference < 0.4) //Deja de ser agresivo si es casi la distancia al player
@@ -144,6 +129,21 @@ public class AtackCorrutine : MonoBehaviour
                 Debug.Log("Collision");
                 tarjectPosition = tarject.transform.position;
                 agresive = true;
+                if (tarject.position.x > transform.position.x)
+                {
+                    if (transform.localScale.x > 0.1)
+                    {
+                        Flip();
+                    }
+
+                }
+                else
+                {
+                    if (transform.localScale.x < 0.1)
+                    {
+                        Flip();
+                    }
+                }
             }
         }
     }

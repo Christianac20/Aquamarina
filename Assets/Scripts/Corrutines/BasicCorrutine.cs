@@ -21,6 +21,7 @@ public class BasicCorrutine : MonoBehaviour
     public float detectVelocity; //Velocidad límite para detectar al Player
     public PlayerControllerWater playerScript;
     [SerializeField] SpriteRenderer spriteRenderer;
+    private Vector3 tarjectPosition;
     #endregion
 
     #region variables no usadas
@@ -93,6 +94,22 @@ public class BasicCorrutine : MonoBehaviour
         //Huida
         distanceDifference = (transform.position - tarject.position).normalized;
         transform.Translate(distanceDifference * scaredVelocity * Time.deltaTime);
+
+        if(tarject.position.x < transform.position.x )
+        {
+            if(transform.localScale.x > 0.1f)
+            {
+                Flip();
+            }
+        }
+
+        else if (tarject.position.x > transform.position.x)
+        {
+            if(transform.localScale.x < 0.1f)
+            {
+                Flip();
+            }
+        }
     }
 
     public void Flip()
