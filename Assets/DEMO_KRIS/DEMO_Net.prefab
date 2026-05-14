@@ -106,6 +106,9 @@ MonoBehaviour:
   livingTime: 2
   initialColor: {r: 1, g: 1, b: 1, a: 1}
   finalColor: {r: 1, g: 1, b: 1, a: 0}
+  animacionAbrirRed: {fileID: 7400000, guid: f259dd0bdf6532145884b827c8f1f546, type: 2}
+  player: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   netLauncherFollowMouse: {fileID: 0}
 --- !u!50 &-5992090430245882812
 Rigidbody2D:
