@@ -23,5 +23,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FossilTunnel.unity
     guid: 4c8e7ef4485918a43b3aa35b2884ac6e
+  - enabled: 1
+    path: Assets/Scenes/DemoFinal.unity
+    guid: bbf5663c7c6bd6a47b5eccae6f203177
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 7723ea3da9515134597121e15c516c54, type: 3}
