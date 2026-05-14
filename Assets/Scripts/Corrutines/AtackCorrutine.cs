@@ -4,6 +4,7 @@ using TMPro;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 public class AtackCorrutine : MonoBehaviour
 {
@@ -80,11 +81,12 @@ public class AtackCorrutine : MonoBehaviour
                 //Cambio de posición entre puntos
                 if (!agent.pathPending && agent.remainingDistance <= 0.1)
                 {
+
                     currentPosition = (currentPosition + 1) % points.Length;
                     agent.SetDestination(points[currentPosition].position);
 
-                }
-                yield return null;
+            }
+            yield return null;
             }
 
             else
@@ -96,9 +98,11 @@ public class AtackCorrutine : MonoBehaviour
                 distanceDifference = Vector2.Distance(transform.position, tarjectPosition);
 
                 Vector2 distanceDirecction = (transform.position - tarjectPosition).normalized;
-                Debug.Log("ÑomÑom");
+                Debug.Log("Comer");
 
-                transform.Translate(distanceDirecction * -1f * agresiveVelocity * Time.deltaTime);
+
+            
+            transform.Translate(distanceDirecction * -1f * agresiveVelocity * Time.deltaTime);
 
                 if(distanceDifference < 0.4) //Deja de ser agresivo si es casi la distancia al player
                 {
@@ -107,11 +111,16 @@ public class AtackCorrutine : MonoBehaviour
             }
         
     }
-        
 
-    
 
-       //Detecta si el multiplicador de velocidad del player es mayor que su límite de detección, en tal caso   , se cumple el if
+    public void Flip()
+    {
+        float localScaleX = transform.localScale.x;
+        localScaleX = localScaleX * -1f;
+        transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);
+    }
+
+    //Detecta si el multiplicador de velocidad del player es mayor que su límite de detección, en tal caso   , se cumple el if
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == ("Player"))
@@ -121,6 +130,21 @@ public class AtackCorrutine : MonoBehaviour
                 Debug.Log("Collision");
                 tarjectPosition = tarject.transform.position;
                 agresive = true;
+                if (tarject.position.x > transform.position.x)
+                {
+                    if (transform.localScale.x > 0.1)
+                    {
+                        Flip();
+                    }
+
+                }
+                else
+                {
+                    if (transform.localScale.x < 0.1)
+                    {
+                        Flip();
+                    }
+                }
             }
         }
     }

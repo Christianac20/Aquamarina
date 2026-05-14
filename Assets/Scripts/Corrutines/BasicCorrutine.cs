@@ -21,6 +21,7 @@ public class BasicCorrutine : MonoBehaviour
     public float detectVelocity; //Velocidad límite para detectar al Player
     public PlayerControllerWater playerScript;
     [SerializeField] SpriteRenderer spriteRenderer;
+    private Vector3 tarjectPosition;
     #endregion
 
     #region variables no usadas
@@ -67,6 +68,7 @@ public class BasicCorrutine : MonoBehaviour
             {
                 currentPosition = (currentPosition + 1) % points.Length;
                 agent.SetDestination(points[currentPosition].position);
+                Flip();
             }
         }
         else
@@ -78,11 +80,10 @@ public class BasicCorrutine : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       if(collision.gameObject.tag == ("Player"))
+       if(collision.gameObject.tag == ("Player") || collision.gameObject.tag == ("Net"))
        {
             if (detectVelocity < playerScript.speedMultiplier) //Detecta si el multiplicador de velocidad del player es mayor que su límite de detección, en tal caso, se cumple el if
             {
-                Debug.Log("tontopolla AY AY AY");
                 scared = true;
             }
        }
@@ -93,6 +94,29 @@ public class BasicCorrutine : MonoBehaviour
         //Huida
         distanceDifference = (transform.position - tarject.position).normalized;
         transform.Translate(distanceDifference * scaredVelocity * Time.deltaTime);
+
+        if(tarject.position.x < transform.position.x )
+        {
+            if(transform.localScale.x > 0.1f)
+            {
+                Flip();
+            }
+        }
+
+        else if (tarject.position.x > transform.position.x)
+        {
+            if(transform.localScale.x < 0.1f)
+            {
+                Flip();
+            }
+        }
+    }
+
+    public void Flip()
+    {
+        float localScaleX = transform.localScale.x;
+        localScaleX = localScaleX * -1f;
+        transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);
     }
 
     public void TriggerEvent() //Se triggerea al final de la animación del pez huyendo
