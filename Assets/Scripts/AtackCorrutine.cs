@@ -4,6 +4,7 @@ using TMPro;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 public class AtackCorrutine : MonoBehaviour
 {
@@ -80,12 +81,12 @@ public class AtackCorrutine : MonoBehaviour
                 //Cambio de posición entre puntos
                 if (!agent.pathPending && agent.remainingDistance <= 0.1)
                 {
+
                     currentPosition = (currentPosition + 1) % points.Length;
                     agent.SetDestination(points[currentPosition].position);
-                    Flip();
 
-                }
-                yield return null;
+            }
+            yield return null;
             }
 
             else
