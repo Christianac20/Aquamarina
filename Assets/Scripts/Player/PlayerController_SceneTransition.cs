@@ -25,10 +25,10 @@ public class SceneTransition : MonoBehaviour
         canvasFades = GameObject.FindWithTag("PanelFades");
         canvasAnimator = canvasFades.GetComponent<Animator>();
         player = GameObject.FindWithTag("Player");
-        player_SceneTypeChecker = FindObjectOfType<PlayerController_SceneTypeChecker>();
-        playerControllerWater = FindObjectOfType<PlayerControllerWater>();
-        playerControllerGround = FindObjectOfType<PlayerController_Ground>();
-        playerController_Triggers = FindObjectOfType<PlayerController_Triggers>();
+        player_SceneTypeChecker = player.GetComponent<PlayerController_SceneTypeChecker>();
+        playerControllerWater = player.GetComponent<PlayerControllerWater>();
+        playerControllerGround = player.GetComponent<PlayerController_Ground>();
+        playerController_Triggers = player.GetComponent<PlayerController_Triggers>();
     }
 
     // Update is called once per frame

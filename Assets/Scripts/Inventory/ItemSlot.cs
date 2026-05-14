@@ -20,19 +20,18 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     //ITEM SLOT
     [SerializeField] TMP_Text quantityText;
     [SerializeField] Image itemImage;
-
     public GameObject selectedShader;
     public bool thisItemSelected;
     [SerializeField] InventoryManager inventoryManager;
     #endregion
 
     #region METHODS
-    void Start()
+    void Start() //Almaceno referencias a scripts
     {
         inventoryManager = FindAnyObjectByType<InventoryManager>();
     }
 
-    public int AddItem(string itemName, int quantity, Sprite itemSprite)
+    public int AddItem(string itemName, int quantity, Sprite itemSprite) //METODO para añadir items al inventario
     {
         //Check if the slot is already full
         if (isFull)
@@ -68,7 +67,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         return 0;
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    public void OnPointerClick(PointerEventData eventData) //Que hace un slot si lo clicas
     {
         if (eventData.button == PointerEventData.InputButton.Left)
         {
@@ -80,7 +79,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    public void OnLeftClick()
+    public void OnLeftClick() //al hacer click izdo, si el item es usable, lo usa y deduce uno del total de ese slot. Si el recuento de items de x tipo en un slot es 0, vacía el slot
     {
         if (thisItemSelected)
         {
@@ -95,7 +94,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
                 }
             }
         }
-        else
+        else //Deselecciona todos los slots y selecciona en el que se hace click si no es usable, solo pa efecto de seleccion
         {
             inventoryManager.DeselectAllSlots();
         
@@ -104,7 +103,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    private void EmptySlot()
+    private void EmptySlot() //Metodo que se llama al tener un  slot vacio, desactivando su texto y poniendo el sprite de slot vacio
     {
         quantityText.enabled = false;
         itemImage.sprite = emptySprite;

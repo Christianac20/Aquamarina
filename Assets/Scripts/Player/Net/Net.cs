@@ -18,7 +18,8 @@ public class Net : MonoBehaviour
 	private Rigidbody2D _rigidbody;
 	private float _startingTime;
 	Animator animator;
-	[SerializeField] GameObject player;
+
+    [SerializeField] GameObject player;
 	[SerializeField] SpriteRenderer spriteRenderer;
 
     [SerializeField] NetLauncherFollowMouse netLauncherFollowMouse;
@@ -52,8 +53,8 @@ public class Net : MonoBehaviour
             spriteRenderer.flipX = false;
         }
 
-			//Almacena position de la net
-			Vector2 netPosition = transform.position;
+		//Almacena position de la net
+		Vector2 netPosition = transform.position;
 
         if (netPosition != netLauncherFollowMouse.GetWorldPositionFromMouse()) //Si la posicion de la net difiere de la del objetivo, sigue moviendose hacia este
 		{
@@ -99,8 +100,8 @@ public class Net : MonoBehaviour
 
     public void Vanish() //Eliminacion paulatina de la red
 	{
-		speed = 0f;
-        _renderer.enabled = false;
+		speed = speed / 2;
+        //_renderer.enabled = false;
 		Destroy(this.gameObject, 1f);
 	}
 }
