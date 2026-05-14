@@ -16,7 +16,8 @@ public class PlayerController_Equipment : MonoBehaviour
     [Header("Variables generales")]
     [SerializeField] Vector2 moveAmmount;
     public GameObject menuPDA;
-    [SerializeField] float shootingInterval; 
+    [SerializeField] float shootingInterval;
+    public AudioManager audioManager;
 
     //Variables base para controlar la cadencia de disparo del arma
     public bool menuPDAActivated;

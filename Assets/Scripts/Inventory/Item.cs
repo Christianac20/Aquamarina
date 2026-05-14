@@ -9,7 +9,7 @@ public class Item : MonoBehaviour
     [SerializeField] int quantity; //Cantidad a añadir del item
     [SerializeField] Sprite sprite; //SPRITE QUE SE MOSTRARA EN EL INVENTARIO
     [SerializeField] InventoryManager inventoryManager;
-
+    public AudioManager audioManager;
     #endregion
 
     #region METHODS
