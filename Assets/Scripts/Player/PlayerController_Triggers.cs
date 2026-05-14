@@ -18,6 +18,7 @@ public class PlayerController_Triggers : MonoBehaviour
     [SerializeField] GameObject bubblesDamage;
     public GameObject playerPositionOnEnter;
     [SerializeField] GameObject[] playerPositionsArrayOnEnter;
+    public AudioManager audioManager;
 
     #endregion 
 
@@ -29,6 +30,7 @@ public class PlayerController_Triggers : MonoBehaviour
         animator = GetComponent<Animator>();
         sceneTransition = FindObjectOfType<SceneTransition>();
         playerEquipment = FindObjectOfType<PlayerController_Equipment>();
+
     }
 
     // Update is called once per frame
@@ -50,6 +52,8 @@ public class PlayerController_Triggers : MonoBehaviour
             timer.currentTime -= timer.depleteAir;
             animator.SetTrigger("DamageTaken");
             bubblesDamageAnimator.SetTrigger("Damage");
+            audioManager.PlaySFX(audioManager.Hurt01Agh);
+
         }
 
         //Detects if player touches a teleporter collider

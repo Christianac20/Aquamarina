@@ -56,12 +56,14 @@ public class InventoryManager : MonoBehaviour
         {
             case "O2 Bottle":
                 audioManager.PlaySFX(audioManager.BombonaOxigeno);
+                Debug.Log("Suena mostro");
                 break;
             case "MenaHierro":
                 audioManager.PlaySFX(audioManager.Plastico);
                 break;
             case "Cobre":
                 audioManager.PlaySFX(audioManager.Cobre);
+                Debug.Log("Suena mostro");
                 break;
             case "Hierro":
                 audioManager.PlaySFX(audioManager.Hierro);
