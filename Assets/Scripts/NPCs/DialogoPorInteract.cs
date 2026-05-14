@@ -80,7 +80,6 @@ public class DialogoPorInteract : MonoBehaviour
         dialogueMark.SetActive(false); // Desactiva el objeto visual de entrada.
         lineIndex = 0; // Reinicia el índice de la línea de diálogo actual.
         StartCoroutine(ShowLine()); // Inicia la corrutina para mostrar la primera línea de diálogo.
-        //Time.timeScale = 0f; // Pausa el juego para que el jugador pueda leer el diálogo sin distracciones.
         playerControllerWater.enabled = false; // Desactiva el controlador del jugador para evitar movimientos durante el diálogo.
         playerControllerGround.enabled = false; // Desactiva el controlador del jugador para evitar movimientos durante el diálogo.
     }

@@ -2060,17 +2060,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 839904646403945402, guid: 918ee726558e4a647ae1b2f46a603ef8, type: 3}
-      propertyPath: m_Name
-      value: Panel_DialogueTrigger
-      objectReference: {fileID: 0}
     - target: {fileID: 2740694570725104715, guid: 918ee726558e4a647ae1b2f46a603ef8, type: 3}
       propertyPath: m_Name
       value: Canvas_DialogueTrigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 4741281412351614659, guid: 918ee726558e4a647ae1b2f46a603ef8, type: 3}
-      propertyPath: m_Sprite
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5708894980906673173, guid: 918ee726558e4a647ae1b2f46a603ef8, type: 3}
       propertyPath: m_Pivot.x
@@ -2518,10 +2510,6 @@ PrefabInstance:
     - target: {fileID: 2740694570725104715, guid: 918ee726558e4a647ae1b2f46a603ef8, type: 3}
       propertyPath: m_Name
       value: Canvas_DialogueInteract
-      objectReference: {fileID: 0}
-    - target: {fileID: 4741281412351614659, guid: 918ee726558e4a647ae1b2f46a603ef8, type: 3}
-      propertyPath: m_Sprite
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5708894980906673173, guid: 918ee726558e4a647ae1b2f46a603ef8, type: 3}
       propertyPath: m_Pivot.x

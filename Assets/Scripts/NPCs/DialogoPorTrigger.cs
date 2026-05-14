@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -55,6 +56,12 @@ public class DialogoPorTrigger : MonoBehaviour
     {
         portrait.sprite = portraitsSprites[lineIndex];
 
+        // Evitar que el contador baje de 0
+        if (countdownDialogue < 0f)
+        {
+            countdownDialogue = 0f;
+        }
+
         if (isPlayerInDialogueRange)
         {
             if (!didDialogueStart)
@@ -63,10 +70,7 @@ public class DialogoPorTrigger : MonoBehaviour
             }
             else if (dialogueText.text == dialogueLines[lineIndex])
             {
-                if (actionInteract.WasPressedThisFrame()) //Pasado X tiempo, va a la siguiente linea de dialogo
-                {
-                    NextDialogueLine(); // Si el diálogo ya ha comenzado y la línea actual está completa, muestra la siguiente línea.
-                }
+                NextDialogueLine(); // Si el diálogo ya ha comenzado y la línea actual está completa, muestra la siguiente línea.
             }
             else
             {
@@ -81,27 +85,33 @@ public class DialogoPorTrigger : MonoBehaviour
 
     private void StartDialogue()
     {
-        didDialogueStart = true;
+        //Actualizar el contador
+        countdownDialogue -= Time.deltaTime;
+        didDialogueStart = true; //Dialogo empezado
         dialoguePanel.SetActive(true); // Activa el panel de diálogo.
         lineIndex = 0; // Reinicia el índice de la línea de diálogo actual.
         StartCoroutine(ShowLine()); // Inicia la corrutina para mostrar la primera línea de diálogo.
-        //countdownDialogue -= Time.deltaTime; //Cuenta atrás para la siguiente línea de dialogo
     }
 
     private void NextDialogueLine()
     {
-        lineIndex++; // Incrementa el índice de la línea de diálogo actual.
-        if (lineIndex < dialogueLines.Length)
+        if (countdownDialogue <= 0f)
         {
-            StartCoroutine(ShowLine()); // Muestra la siguiente línea de diálogo.
+            lineIndex++; // Incrementa el índice de la línea de diálogo actual.
+            if (lineIndex < dialogueLines.Length)
+            {
+                StartCoroutine(ShowLine()); // Muestra la siguiente línea de diálogo.
+            }
+            else
+            {
+                didDialogueStart = false; // Resetea la variable de control del diálogo.
+                lineIndex = 0; // Reinicia el índice de la línea de diálogo actual.
+                this.gameObject.SetActive(false);
+            }
+
+            countdownDialogue = 5.0f;
         }
-        else
-        {
-            didDialogueStart = false; // Resetea la variable de control del diálogo.
-            dialoguePanel.SetActive(false);
-            lineIndex = 0; // Reinicia el índice de la línea de diálogo actual.
-            this.gameObject.SetActive(false);
-        }
+
     }
 
     private void SelectAudioClip()
