@@ -797,9 +797,53 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6088166066078387388, guid: 88c29a59036743847925ffba44f68110, type: 3}
+      propertyPath: m_Pivot.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088166066078387388, guid: 88c29a59036743847925ffba44f68110, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088166066078387388, guid: 88c29a59036743847925ffba44f68110, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088166066078387388, guid: 88c29a59036743847925ffba44f68110, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088166066078387388, guid: 88c29a59036743847925ffba44f68110, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088166066078387388, guid: 88c29a59036743847925ffba44f68110, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088166066078387388, guid: 88c29a59036743847925ffba44f68110, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 64.47656
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088166066078387388, guid: 88c29a59036743847925ffba44f68110, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 15.50293
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088166066078387388, guid: 88c29a59036743847925ffba44f68110, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088166066078387388, guid: 88c29a59036743847925ffba44f68110, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 7612012629716338358, guid: 88c29a59036743847925ffba44f68110, type: 3}
       propertyPath: m_Name
       value: DEMO_CinematicaMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 8214788143366179712, guid: 88c29a59036743847925ffba44f68110, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
