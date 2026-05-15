@@ -1,5 +1,8 @@
 # PFC_Aquamarina_AJE2M
 
+Version 1.0 para la entrega lista. Hay algun bug menor.
+Si entrando al juego el player se hayase como suspendido en el aire, sencillamente ir a ajustes, menu principal y volver a darle a continuar. Se arregla así eso.
+
 Explora y Descubre una fosa marina inédita para el ser humano.
 Movimiento Subacuático centrado en exploración y Terrestre más relajado.
 Mecanica de vida basada en aire.
@@ -21,7 +24,6 @@ Preparación de DEMO inicial.
 Menús con diferentes opciones de ajustes. Como cambiar el volumen de la música y activar la pantalla completa.
 Inicio Preparacion de la Build de la demo final.
 Con unos bonitos fondos con paralaje y una bella fauna a lo largo de los 5 niveles.
-
 Nueva animacion para la red.
 Montando Dialogos directos
 Preparacion fase final bugfixes. Todos los peces capturables e items recogibles
