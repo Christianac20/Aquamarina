@@ -887,7 +887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasDeath: {fileID: 0}
-  timer: {fileID: 0}
+  timer: {fileID: 6719906942247779276}
 --- !u!1001 &3499441953071397769
 PrefabInstance:
   m_ObjectHideFlags: 0

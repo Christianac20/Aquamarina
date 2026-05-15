@@ -21,7 +21,12 @@ public class Player_DeathScreen : MonoBehaviour
     {
         if (timer.playerDead) //CHECK SI ESTÁ MUERTO PARA MOSTRAR PANTALLA MUERTE
         {
-            canvasDeath.SetActive(true);
+            Invoke("ActivateCanvas", 2f);
         }
+    }
+
+    void ActivateCanvas()
+    {
+        canvasDeath.SetActive(true);
     }
 }
