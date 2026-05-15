@@ -101,12 +101,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  speed: 2
+  speed: 3
   direction: {x: 0, y: 0}
-  livingTime: 2
+  livingTime: 4
   initialColor: {r: 1, g: 1, b: 1, a: 1}
   finalColor: {r: 1, g: 1, b: 1, a: 0}
-  animacionAbrirRed: {fileID: 7400000, guid: f259dd0bdf6532145884b827c8f1f546, type: 2}
   player: {fileID: 0}
   spriteRenderer: {fileID: 0}
   netLauncherFollowMouse: {fileID: 0}

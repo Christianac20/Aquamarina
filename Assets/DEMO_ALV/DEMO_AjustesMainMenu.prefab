@@ -472,6 +472,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 8258638917262421993}
+    - target: {fileID: 4232248093830665294, guid: 589824a8a46fa004a9c163a2313779ec, type: 3}
+      propertyPath: inputActionAsset
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: 7723ea3da9515134597121e15c516c54, type: 3}
+    - target: {fileID: 4618497862691261300, guid: 589824a8a46fa004a9c163a2313779ec, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4618497862691261300, guid: 589824a8a46fa004a9c163a2313779ec, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 6
@@ -479,6 +487,10 @@ PrefabInstance:
     - target: {fileID: 4618497862691261300, guid: 589824a8a46fa004a9c163a2313779ec, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618497862691261300, guid: 589824a8a46fa004a9c163a2313779ec, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4618497862691261300, guid: 589824a8a46fa004a9c163a2313779ec, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -489,12 +501,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5939807122650168305}
     - target: {fileID: 4618497862691261300, guid: 589824a8a46fa004a9c163a2313779ec, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618497862691261300, guid: 589824a8a46fa004a9c163a2313779ec, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 4618497862691261300, guid: 589824a8a46fa004a9c163a2313779ec, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: set_enabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618497862691261300, guid: 589824a8a46fa004a9c163a2313779ec, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Start
       objectReference: {fileID: 0}
     - target: {fileID: 4618497862691261300, guid: 589824a8a46fa004a9c163a2313779ec, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -505,12 +525,24 @@ PrefabInstance:
       value: UnityEngine.Behaviour, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4618497862691261300, guid: 589824a8a46fa004a9c163a2313779ec, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: CambioEscenAnimatica, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618497862691261300, guid: 589824a8a46fa004a9c163a2313779ec, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4618497862691261300, guid: 589824a8a46fa004a9c163a2313779ec, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618497862691261300, guid: 589824a8a46fa004a9c163a2313779ec, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618497862691261300, guid: 589824a8a46fa004a9c163a2313779ec, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5690336135208689660, guid: 589824a8a46fa004a9c163a2313779ec, type: 3}
       propertyPath: m_AnchorMax.y
