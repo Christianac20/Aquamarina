@@ -198,6 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8de6c96a2aae847adf361c89be14fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputActionAsset: {fileID: 0}
   menuPausa: {fileID: 0}
   menuAjustes: {fileID: 0}
   botonPausa: {fileID: 0}
@@ -284,7 +285,7 @@ GameObject:
   - component: {fileID: 8783641741691544464}
   - component: {fileID: 2283962436421085761}
   - component: {fileID: 8113751244369622436}
-  - component: {fileID: 2426011017400970940}
+  - component: {fileID: 5984414092163523452}
   - component: {fileID: 1141586256515910445}
   m_Layer: 5
   m_Name: Salir_TEXT
@@ -409,7 +410,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &2426011017400970940
+--- !u!114 &5984414092163523452
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -418,7 +419,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7342479102165450269}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55d869cd34c763d489e76a9ece42ed8d, type: 3}
+  m_Script: {fileID: 11500000, guid: dc34f944c8a6ac14fae75fecc2adea87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1141586256515910445
@@ -465,14 +466,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2426011017400970940}
-        m_TargetAssemblyTypeName: CerrarJuego, Assembly-CSharp
-        m_MethodName: QuitGame
-        m_Mode: 1
+      - m_Target: {fileID: 5984414092163523452}
+        m_TargetAssemblyTypeName: SceneChangerSimple, Assembly-CSharp
+        m_MethodName: SceneChange
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: MenuPrincipal
           m_BoolArgument: 0

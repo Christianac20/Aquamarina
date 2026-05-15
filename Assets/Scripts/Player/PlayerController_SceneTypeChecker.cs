@@ -25,6 +25,7 @@ public class PlayerController_SceneTypeChecker : MonoBehaviour
     [SerializeField] GameObject player; //GameObject del player
     [SerializeField] PlayerControllerWater playerControllerWater; //Script controller de water
     [SerializeField] PlayerController_Ground playerControllerGround; //Script controller de tierra
+    [SerializeField] PlayerController_Equipment playerControllerEquipment; //Script controller de tierra
     [SerializeField] Animator animatorPlayer; //Animator del player
 
     #endregion
@@ -36,6 +37,7 @@ public class PlayerController_SceneTypeChecker : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         animatorPlayer = player.GetComponent<Animator>();
         playerControllerWater = player.GetComponent<PlayerControllerWater>();
+        playerControllerEquipment = player.GetComponent<PlayerController_Equipment>();
         playerControllerGround = player.GetComponent<PlayerController_Ground>();
     }
 
@@ -49,6 +51,7 @@ public class PlayerController_SceneTypeChecker : MonoBehaviour
         if (sceneIndex == 1) //Si la escena actual es la 1
         {
             playerControllerWater.enabled = false; //Desactivo el controller de water
+            playerControllerEquipment.enabled = false; //Desactivo el controller de equipos
             playerControllerGround.enabled = true; //Activo el controller de tierra
             animatorPlayer.SetBool("IsGrounded", true); //Activo el bool de grounded para el animator del player
         }
@@ -56,6 +59,7 @@ public class PlayerController_SceneTypeChecker : MonoBehaviour
         {
             playerControllerWater.enabled = true; //Activo el controller de water
             playerControllerGround.enabled = false; //Desactivo el controller de tierra;
+            playerControllerEquipment.enabled = true; //Activo el controller de equipos
             animatorPlayer.SetBool("IsGrounded", false); //Desactivo el bool de grounded para el animator del player
         }
     }
