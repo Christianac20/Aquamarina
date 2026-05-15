@@ -46,6 +46,12 @@ public class SubmarineZoneDiscovered : MonoBehaviour
     {
         switch (sceneTypeChecker.sceneIndex)
         {
+            case 1:
+                zone2Discover.enabled = false;
+                zone3Discover.enabled = false;
+                zone4Discover.enabled = false;
+                zone5Discover.enabled = false;
+                break;
             case 2:
                 zone2Discover.enabled = true;
                 zone3Discover.enabled = false;

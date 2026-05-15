@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SALIR
+  m_text: SALTAR
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 175aee642520e0449ab2dd4c32723233, type: 2}
   m_sharedMaterial: {fileID: -8694246882066762117, guid: 175aee642520e0449ab2dd4c32723233, type: 2}
@@ -429,6 +429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8de6c96a2aae847adf361c89be14fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputActionAsset: {fileID: 0}
   menuPausa: {fileID: 0}
   menuAjustes: {fileID: 0}
   botonPausa: {fileID: 0}
