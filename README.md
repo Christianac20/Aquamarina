@@ -1,32 +1,20 @@
 # PFC\_Aquamarina\_AJE2M
 
-Version 1.0 para la entrega lista. Hay algun bug menor.
 
-Versión 1.1 en camino
-Si entrando al juego el player se hayase como suspendido en el aire, sencillamente ir a ajustes, menu principal y volver a darle a continuar. Se arregla así eso.
 
-Explora y Descubre una fosa marina inédita para el ser humano.
-Movimiento Subacuático centrado en exploración y Terrestre más relajado.
-Mecanica de vida basada en aire.
-Transición entre escenas limpia con fundido a negro y conservacion de datos entre distintas escenas.
-Camara que sigue al player y tiene zonas de movimiento restringido.
-Saca fotos a los peces que veas, con un registro de los que ya sacaste fotos. Con un bonito feedback visual basado en una retícula, para que sepas a que estas sacando tu foto.
-Sistema de diálogo añadido. Con sonidos y portraits personalizados para cada personaje.
-Uso de NavMesh 2D para las IAs de los peces.
-Sistema de viaje rapido con zonas nuevas de viaje rápido descubribles.
-Una bonita interfaz pixel art.
-Más de 30 peces a descubrir!
-Con sistema de inventario e items con funciones únicas.
-Interfaz en una PDA con secciones toggleables como registro de peces e inventario, además de una sección con acceso restringido en la demo.
-Animaciones nuevas de idle para el player en tierra.
-Registro de peces para la camara de fotos, con descripciones y peces desbloqueados solo si se les ha hecho una foto.
-Escenarios creados con Tilesets pixelart.
-Sistema de captura de peces basado en un lanzaredes con el que puedes apuntar a placer. Tan solo no llenes el mar de redes ;).
-Preparación de DEMO inicial.
-Menús con diferentes opciones de ajustes. Como cambiar el volumen de la música y activar la pantalla completa.
-Inicio Preparacion de la Build de la demo final.
-Con unos bonitos fondos con paralaje y una bella fauna a lo largo de los 5 niveles.
-Nueva animacion para la red.
-Montando Dialogos directos
-Preparacion fase final bugfixes. Todos los peces capturables e items recogibles
+##### Versión 0.2
+
+
+
+Si entrando al juego el player se encuentra como suspendido en el aire, sencillamente ir a ajustes, menú principal y volver a darle a continuar para solucionarlo.
+
+
+
+Explora y descubre una fosa marina inédita para el ser humano, La Fosa de los Tritones. Con bellos y variados paisajes y fauna creados en un precioso estilo pixel art.
+Movimiento Subacuático centrado en exploración y movimiento terrestre relajado. Con una mecánica de vida basada en Oxígeno, deberás cuidar el oxígeno que disminuye paulatinamente con el tiempo, y cuando recibes daño por alguno de los peces hostiles de la fosa.
+El juego cuenta con una fluida transición entre escenas con fundidos a negro y conservación de datos entre distintas escenas.
+¡Más de 30 peces a descubrir! Saca fotos a los peces que veas, con un registro de los que ya has fotografiado (con información específica de cada pez) y feedback visual y sonoro al tomar fotos. También puedes capturarlos y guardarlos en tu inventario junto a botellas portátiles de oxígeno.
+
+Interactúa con personajes como Mortimer y el Dr. Coralius, quienes tienen con interesantes historias que contar.
+Viaja rápidamente entre zonas gracias a un pequeño submarino proporcionado por Dr. Coralius y Mortimer.
 
