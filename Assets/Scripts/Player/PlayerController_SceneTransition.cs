@@ -39,13 +39,6 @@ public class SceneTransition : MonoBehaviour
 
     public void SceneChange()
     {
-        StartCoroutine(ChangeScenePlayer());
-    }
-
-    IEnumerator ChangeScenePlayer()
-    {
-        canvasAnimator.SetTrigger("Iniciar");
-
         //Desactivo los controles del player
         if (playerControllerWater)
         {
@@ -55,6 +48,13 @@ public class SceneTransition : MonoBehaviour
         {
             playerControllerGround.enabled = false;
         }
+
+        StartCoroutine(ChangeScenePlayer());
+    }
+
+    IEnumerator ChangeScenePlayer()
+    {
+        canvasAnimator.SetTrigger("Iniciar");
 
         yield return new WaitForSeconds(animacionFinal.length);
 
@@ -83,6 +83,5 @@ public class SceneTransition : MonoBehaviour
             playerControllerGround.enabled = true;
         }
     }
-
     #endregion
 }

@@ -1470,7 +1470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4100363257055815335, guid: 77e0284957d536a4994d925c51dc6c6c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.777777
+      value: -15.777779
       objectReference: {fileID: 0}
     - target: {fileID: 4100363257055815335, guid: 77e0284957d536a4994d925c51dc6c6c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1631,6 +1631,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PropsLabs
       objectReference: {fileID: 0}
+    - target: {fileID: 1865741249791836233, guid: 9cf124c9b8db30145998bfeefa6737a1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: 2244034731026192351, guid: 9cf124c9b8db30145998bfeefa6737a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1670,6 +1674,10 @@ PrefabInstance:
     - target: {fileID: 2244034731026192351, guid: 9cf124c9b8db30145998bfeefa6737a1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7613401801281783309, guid: 9cf124c9b8db30145998bfeefa6737a1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
