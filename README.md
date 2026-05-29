@@ -1,6 +1,12 @@
-# AQUAMARINA
+# PFC\_Aquamarina\_AJE2M
+
+
 
 ##### Versión 0.2
+
+
+
+Recordar reactivar el dialogo por trigger de la escena del Lab. Desactivado temporalmente para facilitar el arreglo de bugs.
 
 
 

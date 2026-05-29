@@ -10,12 +10,9 @@ public class SceneTransition : MonoBehaviour
 
     [SerializeField] AnimationClip animacionFinal;
     [SerializeField] GameObject canvasFades;
-    [SerializeField] PlayerControllerWater playerControllerWater;
-    [SerializeField] PlayerController_Ground playerControllerGround;
     [SerializeField] GameObject player;
-    [SerializeField] PlayerController_SceneTypeChecker player_SceneTypeChecker;
+    [SerializeField] PlayerControllerWater playerControllerWater;
     [SerializeField] PlayerController_Triggers playerController_Triggers;
-
     #endregion
 
     #region METHODS
@@ -25,16 +22,8 @@ public class SceneTransition : MonoBehaviour
         canvasFades = GameObject.FindWithTag("PanelFades");
         canvasAnimator = canvasFades.GetComponent<Animator>();
         player = GameObject.FindWithTag("Player");
-        player_SceneTypeChecker = player.GetComponent<PlayerController_SceneTypeChecker>();
-        playerControllerWater = player.GetComponent<PlayerControllerWater>();
-        playerControllerGround = player.GetComponent<PlayerController_Ground>();
         playerController_Triggers = player.GetComponent<PlayerController_Triggers>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        playerControllerWater = player.GetComponent<PlayerControllerWater>();
     }
 
     public void SceneChange()
@@ -44,45 +33,19 @@ public class SceneTransition : MonoBehaviour
 
     IEnumerator ChangeScenePlayer()
     {
+        playerController_Triggers.isTransitioningToScene = true;
+        playerControllerWater.enabled = false;
+        
         canvasAnimator.SetTrigger("Iniciar");
 
-        //Desactivo los controles del player
-        if (playerControllerWater)
-        {
-            playerControllerWater.enabled = false;
-        }
-        if (playerControllerGround)
-        {
-            playerControllerGround.enabled = false;
-        }
-
         yield return new WaitForSeconds(animacionFinal.length);
-
+                
         SceneManager.LoadScene(playerController_Triggers.sceneToTPPlayer);
-
-        //muevo al player al punto de la pantalla en que quiero que aparezca
-        //playerPositionOnEnter = GameObject.FindWithTag("PositionPlayerOnEntry");
-        /*if (player_SceneTypeChecker.playerGroundIsActive)
-        {
-            playerGround.GetComponent<Transform>().position = playerTriggersWater.playerPositionOnEnter.transform.position;
-        }
-        else if (player_SceneTypeChecker.playerWaterIsActive)
-        {
-            playerWater.GetComponent<Transform>().position = playerTriggersWater.playerPositionOnEnter.transform.position;
-        }*/
 
         player.GetComponent<Transform>().position = playerController_Triggers.playerPositionOnEnter.transform.position;
 
-        //Reactivo los controles del player
-        if (playerControllerWater)
-        {
-            playerControllerWater.enabled = true;
-        }
-        if (playerControllerGround)
-        {
-            playerControllerGround.enabled = true;
-        }
+        playerControllerWater.enabled = true;
+        playerController_Triggers.isTransitioningToScene = false;
     }
-
     #endregion
 }
