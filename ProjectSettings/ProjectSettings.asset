@@ -814,8 +814,8 @@ PlayerSettings:
   cloudProjectId: f92369b1-77c5-4d1e-8d20-6a3739ec7ae5
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: PFC_Aquamarina_AJE2M
-  organizationId: christianac20
+  projectName: Aquamarina
+  organizationId: rankethedev
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
