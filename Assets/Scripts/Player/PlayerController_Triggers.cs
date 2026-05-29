@@ -51,7 +51,6 @@ public class PlayerController_Triggers : MonoBehaviour
             animator.SetTrigger("DamageTaken");
             bubblesDamageAnimator.SetTrigger("Damage");
             audioManager.PlaySFX(audioManager.Hurt01Agh);
-
         }
 
         //Detects if player touches a teleporter collider

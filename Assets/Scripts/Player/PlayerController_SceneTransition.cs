@@ -11,6 +11,7 @@ public class SceneTransition : MonoBehaviour
     [SerializeField] AnimationClip animacionFinal;
     [SerializeField] GameObject canvasFades;
     [SerializeField] GameObject player;
+    [SerializeField] PlayerControllerWater playerControllerWater;
     [SerializeField] PlayerController_Triggers playerController_Triggers;
     #endregion
 
@@ -22,6 +23,7 @@ public class SceneTransition : MonoBehaviour
         canvasAnimator = canvasFades.GetComponent<Animator>();
         player = GameObject.FindWithTag("Player");
         playerController_Triggers = player.GetComponent<PlayerController_Triggers>();
+        playerControllerWater = player.GetComponent<PlayerControllerWater>();
     }
 
     public void SceneChange()
@@ -32,6 +34,7 @@ public class SceneTransition : MonoBehaviour
     IEnumerator ChangeScenePlayer()
     {
         playerController_Triggers.isTransitioningToScene = true;
+        playerControllerWater.enabled = false;
         
         canvasAnimator.SetTrigger("Iniciar");
 
@@ -41,6 +44,7 @@ public class SceneTransition : MonoBehaviour
 
         player.GetComponent<Transform>().position = playerController_Triggers.playerPositionOnEnter.transform.position;
 
+        playerControllerWater.enabled = true;
         playerController_Triggers.isTransitioningToScene = false;
     }
     #endregion

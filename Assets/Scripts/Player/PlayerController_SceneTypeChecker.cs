@@ -49,29 +49,20 @@ public class PlayerController_SceneTypeChecker : MonoBehaviour
     {
         currentScene = SceneManager.GetActiveScene(); //Obtiene la escena actual
         sceneIndex = currentScene.buildIndex; //Obtiene el indice de la escena actual (1 es la terrestre)
-        
-        if (playerController_Triggers.isTransitioningToScene == true)
+
+        if (sceneIndex == 1) //Si la escena actual es la 1
         {
-            //Desactivo los controles del player
-            playerControllerWater.enabled = false;
-            playerControllerGround.enabled = false;
+            playerControllerGround.enabled = true; //Activo el controller de tierra
+            playerControllerWater.enabled = false; //Desactivo el controller de water
+            playerControllerEquipment.enabled = false; //Desactivo el controller de equipos 
+            animatorPlayer.SetBool("IsGrounded", true); //Activo el bool de grounded para el animator del player
         }
-        else
+        else //En demás casos
         {
-            if (sceneIndex == 1) //Si la escena actual es la 1
-            {
-                playerControllerGround.enabled = true; //Activo el controller de tierra
-                playerControllerWater.enabled = false; //Desactivo el controller de water
-                playerControllerEquipment.enabled = false; //Desactivo el controller de equipos 
-                animatorPlayer.SetBool("IsGrounded", true); //Activo el bool de grounded para el animator del player
-            }
-            else //En demás casos
-            {
-                playerControllerWater.enabled = true; //Activo el controller de water
-                playerControllerGround.enabled = false; //Desactivo el controller de tierra
-                playerControllerEquipment.enabled = true; //Activo el controller de equipos
-                animatorPlayer.SetBool("IsGrounded", false); //Desactivo el bool de grounded para el animator del player
-            }
+            playerControllerWater.enabled = true; //Activo el controller de water
+            playerControllerGround.enabled = false; //Desactivo el controller de tierra
+            playerControllerEquipment.enabled = true; //Activo el controller de equipos
+            animatorPlayer.SetBool("IsGrounded", false); //Desactivo el bool de grounded para el animator del player
         }
 
         /*
@@ -99,7 +90,7 @@ public class PlayerController_SceneTypeChecker : MonoBehaviour
         }
         */
     }
-
+    /*
     void GroundContollerOn()
     {
         if (playerController_Triggers.isTransitioningToScene == true)
@@ -126,6 +117,6 @@ public class PlayerController_SceneTypeChecker : MonoBehaviour
         {
             playerControllerWater.enabled = true; //Activo el controller de water
         }
-    }
+    }*/
     #endregion
 }
