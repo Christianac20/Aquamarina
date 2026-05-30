@@ -39,7 +39,7 @@ public class DialogoPorInteract : MonoBehaviour
     private void Awake()
     {
         //ASIGNO LAS VARIABLES DE ACCIONES DEL INPUT SYSTEM
-        actionInteract = InputSystem.actions.FindAction("Interact");
+        actionInteract = InputSystem.actions.FindAction("Player_Ground/Interact");
         playerControllerGround = FindObjectOfType<PlayerController_Ground>();
     }
 
