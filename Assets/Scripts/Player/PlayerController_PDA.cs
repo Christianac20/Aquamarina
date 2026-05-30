@@ -8,7 +8,8 @@ public class PlayerController_PDA : MonoBehaviour
     #region VARIABLES
     [Header("Variables Input System")]
     [SerializeField] InputActionAsset inputActionAsset;
-    InputAction actionPDA;
+    InputAction actionPDAWater;
+    InputAction actionPDAGround;
     InputAction actionAjustes;
 
     public GameObject menuPDA;
@@ -21,8 +22,10 @@ public class PlayerController_PDA : MonoBehaviour
     // Start is called before the first frame update
     void Start() ///GUARDO PREFERENCIAS
     {
-        actionPDA = InputSystem.actions.FindAction("PDA");
+        actionPDAWater = InputSystem.actions.FindAction("Player_Water/PDA");
+        actionPDAGround = InputSystem.actions.FindAction("Player_Ground/PDA");
         actionAjustes = InputSystem.actions.FindAction("Ajustes");
+
         if (!menuPDA)
         {
             menuPDA = GameObject.FindWithTag("PDAMenu");
@@ -49,13 +52,13 @@ public class PlayerController_PDA : MonoBehaviour
             menuPDA.SetActive(false);
         }
 
-        if (actionPDA.WasPressedThisFrame() && menuPDAActivated)
+        if ((actionPDAWater.WasPressedThisFrame() || actionPDAGround.WasPressedThisFrame()) && menuPDAActivated)
         {
             Time.timeScale = 1;
             menuPDA.SetActive(false);
             menuPDAActivated = false;
         }
-        else if (actionPDA.WasPressedThisFrame() && !menuPDAActivated)
+        else if ((actionPDAWater.WasPressedThisFrame() || actionPDAGround.WasPressedThisFrame()) && !menuPDAActivated)
         {
             Time.timeScale = 0;
             menuPDA.SetActive(true);

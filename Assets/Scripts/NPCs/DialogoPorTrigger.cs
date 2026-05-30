@@ -11,7 +11,8 @@ public class DialogoPorTrigger : MonoBehaviour
     [Header("Variables Input System")]
     [SerializeField] InputActionAsset inputActionAsset;
 
-    InputAction actionInteract;
+    InputAction actionInteractGround;
+    InputAction actionInteractWater;
 
     [Header("Dialogue Triggers Variables")]
     [SerializeField, TextArea(2, 4 )] private string[] dialogueLines; // Referencia al texto que se mostrrará del character hablando.
@@ -40,7 +41,9 @@ public class DialogoPorTrigger : MonoBehaviour
     private void Awake()
     {
         //ASIGNO LAS VARIABLES DE ACCIONES DEL INPUT SYSTEM
-        actionInteract = InputSystem.actions.FindAction("Interact");
+        actionInteractGround = InputSystem.actions.FindAction("Player_Ground/Interact");
+        actionInteractWater = InputSystem.actions.FindAction("Player_Water/Interact");
+
         playerControllerWater = FindObjectOfType<PlayerControllerWater>();
         playerControllerGround = FindObjectOfType<PlayerController_Ground>();
     }
@@ -61,11 +64,11 @@ public class DialogoPorTrigger : MonoBehaviour
             {
                 StartDialogue();
             }
-            else if (dialogueText.text == dialogueLines[lineIndex] && actionInteract.WasPressedThisFrame())
+            else if (dialogueText.text == dialogueLines[lineIndex] && (actionInteractWater.WasPressedThisFrame() || actionInteractGround.WasPressedThisFrame()))
             {
                 NextDialogueLine(); // Si el diálogo ya ha comenzado y la línea actual está completa, muestra la siguiente línea.
             }
-            else if (actionInteract.WasPressedThisFrame())
+            else if (actionInteractWater.WasPressedThisFrame() || actionInteractGround.WasPressedThisFrame())
             {
                 StopAllCoroutines(); // Si el jugador presiona F antes de que termine la línea actual, detiene la corrutina de escritura.
                 dialogueText.text = dialogueLines[lineIndex]; // Muestra la línea completa inmediatamente.
